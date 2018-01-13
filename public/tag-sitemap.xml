@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://hzhao.me/tags/Thoughts/</loc>
-        <lastmod>2017-12-19T01:50:20.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://hzhao.me/tags/JavaScript/</loc>
         <lastmod>2017-12-19T02:01:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,28 +10,49 @@
 
     <url>
         <loc>http://hzhao.me/tags/python/</loc>
-        <lastmod>2017-12-19T02:08:01.543Z</lastmod>
+        <lastmod>2017-12-19T02:08:01.542Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/Thoughts/</loc>
+        <lastmod>2017-12-26T02:47:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/Kubernetes/</loc>
+        <lastmod>2018-01-13T15:14:29.610Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/Docker/</loc>
+        <lastmod>2018-01-13T15:14:29.610Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hzhao.me/tags/Cloud/</loc>
-        <lastmod>2017-12-19T02:18:34.000Z</lastmod>
+        <lastmod>2018-01-13T15:14:47.093Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hzhao.me/tags/Reactjs/</loc>
-        <lastmod>2017-12-19T02:18:34.000Z</lastmod>
+        <lastmod>2018-01-13T15:14:47.093Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hzhao.me/tags/Firebase/</loc>
-        <lastmod>2017-12-19T02:18:34.000Z</lastmod>
+        <lastmod>2018-01-13T15:14:47.093Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

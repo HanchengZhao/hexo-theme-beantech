@@ -8,7 +8,23 @@
 
     <url>
         <loc>http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/</loc>
-        <lastmod>2017-12-19T02:18:34.000Z</lastmod>
+        <lastmod>2018-01-13T15:14:47.093Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/</loc>
+        <lastmod>2018-01-13T15:14:29.610Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/12/25/%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Enetworking%E7%9A%84%E5%AF%B9%E8%AF%9D/</loc>
+        <lastmod>2017-12-26T02:47:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +32,7 @@
 
     <url>
         <loc>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks/</loc>
-        <lastmod>2017-12-19T02:08:01.543Z</lastmod>
+        <lastmod>2017-12-19T02:08:01.542Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
