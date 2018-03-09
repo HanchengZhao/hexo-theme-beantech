@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Henry&#39;s thoughts">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/hz_logo.JPG">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script>
+    <title>
+        
+          React global state management - Henry Zhao
+        
+    </title>
+
+    <link rel="canonical" href="http://hzhao.me/2018/03/08/react-global-state-management/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('sunset.JPG')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#React" title="React">React</a>
+                            
+                              <a class="tag" href="/tags/#Redux" title="Redux">Redux</a>
+                            
+                              <a class="tag" href="/tags/#Mobx" title="Mobx">Mobx</a>
+                            
+                        </div>
+                        <h1>React global state management</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Henry Zhao on
+                            2018-03-08
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Henry Zhao</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Redux and Mobx are two most popular state management tools for React apps, representing different design philosophis as object-oriented programming and functional programming. Recently, a new context api has been proposed to provide a native global store solution and received a lot of discussions. Here’s a brief comparion of different methods. I have to say before hand, most things in software engineering are based on opinions and tradeoffs, not facts or hard truth.</p>
+<h2 id="redux">Redux</h2>
+<p>Basic data flow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[Action]--&gt;|just payload|B(Reducer)</span><br><span class="line">D[prevState] --&gt; B</span><br><span class="line">B --&gt;|new state| C(Store)</span><br><span class="line">C --&gt;|rerender| E(subscribed views)</span><br></pre></td></tr></table></figure>
+<h3 id="action">Action</h3>
+<p>Actions are just plain object that contains <code>type</code> and <code>payload</code> property, such as</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">type</span>: ADD_TODO,</span><br><span class="line">    payload: text</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Actions should be returned by action creaters.</p>
+<h3 id="reducer">Reducer</h3>
+<p>Reducers are just pure functions that take the previous <code>related</code> state and action, then return the new state</p>
+<p>Reducers can be combined together by using a function <code>combineReducers</code> from <code>redux</code></p>
+<h3 id="store">Store</h3>
+<p>Single source of truth. Store should be created at the root level,</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/App'</span></span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducers'</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer)</span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;,</span></span><br><span class="line"><span class="regexp">  document.getElementById('root')</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="apis">APIs</h3>
+<ul>
+<li><a href="https://redux.js.org/api-reference/createstore" target="_blank" rel="external">createStore</a>
+<ul>
+<li>create the single store at root level</li>
+</ul>
+</li>
+<li><a href="https://redux.js.org/api-reference/store" target="_blank" rel="external">Store</a></li>
+<li><a href="https://redux.js.org/api-reference/combinereducers" target="_blank" rel="external">combineReducers</a></li>
+<li><a href="https://note.youdao.com/" target="_blank" rel="external">applyMiddleware</a>
+<ul>
+<li>useful for async ajax requests</li>
+</ul>
+</li>
+<li><a href="https://note.youdao.com/" target="_blank" rel="external">bindActionCreators</a>
+<ul>
+<li>the only use case for this is when you want to pass some action creators down to a component that isn’t aware of Redux</li>
+</ul>
+</li>
+<li><a href="https://note.youdao.com/" target="_blank" rel="external">compose</a>
+<ul>
+<li>composes functions from right to left</li>
+</ul>
+</li>
+</ul>
+<h3 id="react-redux">react-redux</h3>
+<h4 id=""><provider store=""></provider></h4>
+<p>Makes the Redux store available to the connect() calls in the component hierarchy below.</p>
+<h4 id="connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</h4>
+<p>Connects a React component to a Redux store.</p>
+<p><code>connect( mapStateToProps, mapDispatchToProps )(component)</code></p>
+<p>If no parameters are provided, it injects just dispatch and doesn’t listen to store</p>
+<p><strong>params:</strong></p>
+<ul>
+<li>
+<p>mapStateToProps(state, [ownProps]): stateProps</p>
+</li>
+<li>
+<p>mapDispatchToProps(dispatch, [ownProps]): dispatchProps</p>
+</li>
+</ul>
+<h3 id="related-libraries">related libraries</h3>
+<ul>
+<li>
+<p><a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="external">redux-thunk</a></p>
+<ul>
+<li>Redux Thunk middleware allows you to write action creators that return a function instead of an action.</li>
+<li>The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. Thus it’s very useful for async actions and promises.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/redux-saga/redux-saga" target="_blank" rel="external">redux-saga</a></p>
+<ul>
+<li>a library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache) easier to manage, more efficient to execute, simple to test, and better at handling failures.</li>
+</ul>
+</li>
+</ul>
+<h3 id="feature">Feature</h3>
+<ul>
+<li>reacting to actions or events</li>
+<li>single store</li>
+<li>functional programming paradigm</li>
+<li>immutable</li>
+<li>pure</li>
+<li>explicit update logic</li>
+<li>plain JavaScript</li>
+<li>more boilerplate</li>
+<li>normalized state</li>
+<li>flat state</li>
+<li>examples:
+<ul>
+<li>business apps</li>
+<li>event based systems</li>
+<li>game events involving a complex reaction</li>
+</ul>
+</li>
+</ul>
+<h3 id="redux-todolist-example">redux todolist example:</h3>
+<p><a href="https://codesandbox.io/s/1zo57njq9q" target="_blank" rel="external"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit todos"></a></p>
+<h3 id="summary">Summary</h3>
+<p>Redux is an opinionated library that reinforces immutable data and functional programming pattern. It provides more granular control of data flow and shines in testability, scaleability, maintainability. It will be suitable for a large team and complex apps because it has mature best practices and community support.</p>
+<h2 id="mobx">MobX</h2>
+<p>Data flow:<br>
+<img src="https://mobx.js.org/docs/flow.png" alt="dataflow"></p>
+<h3 id="observable">observable</h3>
+<p>Observable values can be JS primitives, references, plain objects, class instances, arrays and maps.</p>
+<p>Usage:</p>
+<ul>
+<li>observable(value)</li>
+<li>@observable classProperty = value</li>
+</ul>
+<h3 id="computed-ampamp-autorun">computed &amp;&amp; autorun</h3>
+<p>They are both reactively invoked expressions, but use @computed if you want to reactively produce a value that can be used by other observers and autorun if you don’t want to produce a new value but rather want to achieve an effect. For example imperative side effects like logging, making network requests etc.</p>
+<p>example:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;observable, computed&#125; from <span class="string">"mobx"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OrderLine</span> </span>&#123;</span><br><span class="line">    <span class="meta">@observable</span> price = <span class="number">0</span>;</span><br><span class="line">    <span class="meta">@observable</span> amount = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(price) &#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@computed</span> <span class="keyword">get</span> total() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.price * <span class="keyword">this</span>.amount;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="observer">(@)observer</h3>
+<p>The react components that are wrapped by observer will react to the change of observables.</p>
+<h3 id="action">action</h3>
+<p>It has similar concepts as action in redux. Simply call <code>mobx.useStrict(true)</code> when your application is initialized, and MobX will throw anytime you (accidentally) try to modify state without using an action.</p>
+<h3 id="feature">Feature</h3>
+<ul>
+<li>Reacting to state changes</li>
+<li>multiple stores</li>
+<li>object-oriented programming and reactive programming paradigms</li>
+<li>mutable</li>
+<li>impure</li>
+<li>implicit update logic</li>
+<li>“magic” JavaScript</li>
+<li>less boilerplate</li>
+<li>denormalized state</li>
+<li>nested state</li>
+<li>Examples
+<ul>
+<li>Real-time systems, dashboards, etc</li>
+<li>Text editors, presentation software, etc.</li>
+<li>Not for event based</li>
+</ul>
+</li>
+</ul>
+<h3 id="mobx-todo-example">mobx todo example:</h3>
+<p><a href="https://codesandbox.io/s/vnw0yzx555" target="_blank" rel="external"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Simple MobX TodoList"></a></p>
+<h3 id="summary">Summary</h3>
+<p>Mobx is more suitable for simpler application, rapid prototyping and a small team. It has short learning curve for those that are already familiar with object-oriented programming. It can also be used in large projects if explicit constraints are added, such as useStrict.</p>
+<h2 id="new-context-api">new context api</h2>
+<p>The new context api tries to provide a native global store for React apps and solves the problems that old context api has: <a href="https://github.com/reactjs/rfcs/blob/master/text/0002-new-version-of-context.md#shouldcomponentupdate-blocks-context-changes" target="_blank" rel="external">shouldComponentUpdate blocks context changes</a> and <a href="https://github.com/reactjs/rfcs/blob/master/text/0002-new-version-of-context.md#shifts-complexity-to-user-space" target="_blank" rel="external">Shifts complexity to user space</a></p>
+<p>Context in React provides a mechanism for a child component to access a value in an ancestor component.</p>
+<h3 id="reactcreatecontext">React.createContext()</h3>
+<p>It is passed the initial value (and optionally a <a href="https://twitter.com/acdlite/status/957446433656864768" target="_blank" rel="external">fancy opt-out function that uses a bitmask</a>). This returns an object with a “provider” and a “consumer”</p>
+<h3 id="provider">Provider</h3>
+<p>The provider acts as an event emitter. It keeps track of the most recent context value, and a list of subscribers to be notified whenever it changes.</p>
+<h3 id="consumer">Consumer</h3>
+<p>The consumer accesses the provider’s event emitter using the context API. (This usage is fine because the event emitter itself does not change). When the provider emits a change event, the consumer is notified and calls setState on itself to schedule a re-render.</p>
+<p>Example:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const <span class="type">ThemeContext</span> = <span class="type">React</span>.createContext(<span class="symbol">'ligh</span>t')</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThemeProvider</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;theme: <span class="symbol">'ligh</span>t'&#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">ThemeContext</span>.provide(<span class="keyword">this</span>.state.theme, <span class="keyword">this</span>.props.children)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const <span class="type">ThemeConsumer</span> = (&#123;children&#125;) =&gt; <span class="type">ThemeContext</span>.consume(children)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    &lt;<span class="type">ThemeProvider</span>&gt;</span><br><span class="line">      &lt;<span class="type">ThemeConsumer</span>&gt;&#123;<span class="keyword">val</span> =&gt; &lt;div&gt;&#123;<span class="keyword">val</span>&#125;&lt;/div&gt;&#125;&lt;/<span class="type">ThemeConsumer</span>&gt;</span><br><span class="line">    &lt;/<span class="type">ThemeProvider</span>&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://codesandbox.io/s/k71q68nzr" target="_blank" rel="external"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Example of React's new context API"></a></p>
+<h3 id="summary">Summary</h3>
+<p>New context api provides a native way to manage global store in react apps and is perfect for dependency injection (theme, intl, buildConfig), but it lacks the power to control the data flow. Redux or Mobx may still be needed to handle complex async data process.</p>
+<h2 id="resource">Resource</h2>
+<p><a href="https://redux.js.org/" target="_blank" rel="external">Redux Doc</a></p>
+<p><a href="https://mobx.js.org/index.html" target="_blank" rel="external">Mobx Doc</a></p>
+<p><a href="https://www.youtube.com/watch?v=76FRrbY18Bs" target="_blank" rel="external">Preethi Kasireddy - MobX vs Redux: Comparing the Opposing Paradigms</a></p>
+<p><a href="https://www.robinwieruch.de/redux-mobx-confusion/" target="_blank" rel="external">Redux or MobX: An attempt to dissolve the Confusion</a></p>
+<p><a href="https://medium.com/@DidierFranc/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c" target="_blank" rel="external">Replacing redux with the new React context API</a></p>
+<p><a href="https://github.com/acdlite/rfcs/blob/new-version-of-context/text/0000-new-version-of-context.md" target="_blank" rel="external">new version of context</a></p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/01/13/deploy-a-react-app-in-kubernetes/" data-toggle="tooltip" data-placement="top" title="Deploy a react app in kubernetes">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#redux"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Redux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#action"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Action</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#reducer"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Reducer</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#store"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Store</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#apis"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">APIs</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#react-redux"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">react-redux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text"></span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#related-libraries"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">related libraries</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#feature"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Feature</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#redux-todolist-example"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">redux todolist example:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#summary"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">Summary</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#mobx"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">MobX</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#observable"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">observable</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#computed-ampamp-autorun"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">computed && autorun</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#observer"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">(@)observer</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#action"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">action</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#feature"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">Feature</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mobx-todo-example"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">mobx todo example:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#summary"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">Summary</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#new-context-api"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">new context api</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#reactcreatecontext"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">React.createContext()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#provider"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Provider</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#consumer"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Consumer</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#summary"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Summary</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#resource"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Resource</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#React" title="React">React</a>
+                        
+                          <a class="tag" href="/tags/#Redux" title="Redux">Redux</a>
+                        
+                          <a class="tag" href="/tags/#Mobx" title="Mobx">Mobx</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.yewang.host" target="_blank">Ye Wang Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "henryzhao";
+    var disqus_identifier = "http://hzhao.me/2018/03/08/react-global-state-management/";
+    var disqus_url = "http://hzhao.me/2018/03/08/react-global-state-management/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/hanchengzhao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/HanchengZhao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Henry Zhao 2018 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    modified by <a href="http://hzhao.me">Henry Zhao</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://hzhao.me/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-72269431-2';
+    var _gaDomain = 'hzhao.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<!-- <a id="rocket" href="#top" class=""></a> -->
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://hzhao.me/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
