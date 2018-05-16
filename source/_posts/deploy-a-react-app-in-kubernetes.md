@@ -6,7 +6,7 @@ subtitle:
 header-img: "tree.jpg"
 tags:
 - Kubernetes
-- Reactjs
+- React.js
 - Cloud
 - Docker
 ---

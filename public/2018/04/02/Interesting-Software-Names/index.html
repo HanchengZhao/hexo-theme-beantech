@@ -15,11 +15,11 @@
     <script async defer src="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script>
     <title>
         
-          Cloud Based Web Tools For VIP - Henry Zhao
+          一些有趣的软件名 - Henry Zhao
         
     </title>
 
-    <link rel="canonical" href="http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/">
+    <link rel="canonical" href="http://hzhao.me/2018/04/02/Interesting-Software-Names/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -71,7 +71,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('longwood.JPG')
+            background-image: url('trip.JPG')
             /*post*/
         
     }
@@ -88,18 +88,22 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Cloud" title="Cloud">Cloud</a>
-                            
-                              <a class="tag" href="/tags/#Firebase" title="Firebase">Firebase</a>
-                            
                               <a class="tag" href="/tags/#React.js" title="React.js">React.js</a>
                             
+                              <a class="tag" href="/tags/#CockroachDB" title="CockroachDB">CockroachDB</a>
+                            
+                              <a class="tag" href="/tags/#Google" title="Google">Google</a>
+                            
+                              <a class="tag" href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+                            
+                              <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                            
                         </div>
-                        <h1>Cloud Based Web Tools For VIP</h1>
-                        <h2 class="subheading"></h2>
+                        <h1>一些有趣的软件名</h1>
+                        <h2 class="subheading">无厘头，不代码</h2>
                         <span class="meta">
                             Posted by Henry Zhao on
-                            2017-11-18
+                            2018-04-02
                         </span>
                     </div>
                 
@@ -216,53 +220,121 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <blockquote>
-<p>Reactjs, Firebase, Cloud Functions, serverless architecture, material ui</p>
-</blockquote>
-<p>The project that I have been working on recently is a cloud-based web tool for ASU to manage new teams, announcements, student/project application and peer evaluation. <a href="https://github.com/HanchengZhao/VIP-web" target="_blank" rel="external">Github link</a></p>
-<p>So it is basically a CMS(content management system), but far more lightweight than Drupal, Sharepoint or WordPress. It is still an SPA (single page application), yet a huge upgrade of my last year’s peer evaluation tool for UD.</p>
-<p>It has been a fun journey so far and I have tried many brand new things and received new experience, so it is worth recording some thoughts along the way.</p>
-<h2 id="why-cloud-based-serverless-architecture">Why cloud-based serverless architecture?</h2>
-<p>This is a fundamental question why we choose firebase as our backend or even infrastructure.<br>
-First of all, serveless does not mean <strong>“no server at all”</strong>, it only means that end users or developers no longer need to build or maintain their own servers. Rather, they borrow microservices that are wrapped from those giant tech companies servers, like Amazon Web Service(AWS) or Google Cloud Platform. Thus, developers can focus only on the app logic or ui side, which saves so much money and time especially for startups. Those platform usually provide all kinds of services from database storage to monitoring/testing, web hosting, email/message notification and cloud functions. This ‘all in one’ solution is so much more handy for developers.</p>
-<p>Besides, the selling point of serverless is that <strong>“you only pay the compute that you need”</strong>. There is no waiting time for servers to start, they are just constantly running and you only account for the computing power that you need. Nowadays, people share cars, houses, now even the computing power.<br>
-Of course serverless architecture is not a panacea, but it meets our needs so far.</p>
-<h2 id="then-why-firebase">Then why Firebase?</h2>
-<p>Simply because it provides the exact service that we need for our app. We need a Nosql database, a secure authentication system to implement role-based access control, a storage service to save posters or team logos, an easy-to-deploy hosting service, and backend cloud functions to handle light logic, sanitize data or send emails for us. Besides, it has nice ui and easy-to-use command line tool. After being acquired by Google last summer, it has stronger back and is well integrated into google cloud platform.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="schedule-cron-tasks-with-cloud-functions">Schedule (Cron) tasks with Cloud Functions</h3>
-<p>Cloud functions are so powerful that they can serve as a fast-loading server to deal with database and storage. However, they are usually triggered by events, such as <code>onWrite</code> action.</p>
-<p>Firebase blog has a article explaining using App Engine from google cloud platform to do it:</p>
-<blockquote>
-<p><a href="https://firebase.googleblog.com/2017/03/how-to-schedule-cron-jobs-with-cloud.html" target="_blank" rel="external">How to Schedule (Cron) Jobs with Cloud Functions for Firebase</a></p>
-</blockquote>
-<p>Here, we choose the site <a href="https://cron-job.org/en/" target="_blank" rel="external">Cron Job</a> to handle cron work for us. It has user-friendly interface and is easy to configure cron jobs.</p>
-<p><img src="cron_job.png" alt="cron job"></p>
-<p>Here we set the cron job to run once a day to remove overdue announcement and put scheduled ones in the page. It is important to add a key parameter after the url to avoid malicious access.</p>
-<h3 id="render-elements-iteratively-in-react">Render elements iteratively in React</h3>
-<p>In React, components can be saved and passed as variables. It gives us a more flexible way to loop elements in an array, and interatively render components in the same format. Here is an example of ‘formItem’ component:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> formItem = keys.map(<span class="function">(<span class="params">key</span>) =&gt;</span> (</span><br><span class="line">    &lt;tr key = &#123;key&#125;&gt;</span><br><span class="line">        &lt;td&gt;&lt;Link to=&#123;`$&#123;team&#125;/$&#123;key&#125;`&#125;&gt;&#123;forms[key].formName&#125;&lt;/Link&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&#123;forms[key].startDate.substr(<span class="number">0</span>,<span class="number">15</span>)&#125;&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">        &lt;td&gt;&#123;forms[key].endDate.substr(0,15)&#125;&lt;/</span>td&gt;</span><br><span class="line">        &lt;td&gt;&#123;forms[key].editDate.substr(<span class="number">0</span>,<span class="number">15</span>)&#125;&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">        &lt;td&gt;&#123;key === defaultId ? 'default' : &lt;a href="#" onClick = &#123;(e) =&gt; this.setAsDefault(team, key,e) &#125;&gt;set as default&lt;/</span>a&gt;&#125;&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">        &lt;td&gt;&lt;i className ="glyphicon glyphicon-remove" style = &#123;&#123;cursor:"pointer"&#125;&#125; id = &#123;key&#125; onClick = &#123;() =&gt; this.handleRemove(team, key)&#125;/</span>&gt;&lt;/td&gt;</span><br><span class="line">    &lt;<span class="regexp">/tr&gt;</span></span><br><span class="line"><span class="regexp">    ));</span></span><br></pre></td></tr></table></figure>
-<p>In es6, <code>()</code> after <code>=&gt;</code> will be returned directly.<br>
-Then it wraps the component inside a table:</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span></span><br><span class="line"><span class="xml"> </span><span class="template-variable">&#123;formItem&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>after this, return the whole component inside a function called <code>teamTablegenerate</code>, then generating a table for each team is possible inside render function:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(<span class="keyword">this</span>.state.questions).map(<span class="function">(<span class="params">team</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.teamTablegenerate(team)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="formlist.png" alt="FormList"></p>
-<!-- ### deploy
-### pagination
-### auth
-- only redirect in the first login  
-    - sessionstorage 
-- 
-
-## react-router
-### conditional rendering
-- how to go back to last path with last state
-
-## mobx
-
-## announcement
-### debounce -->
+                <p>缘起一个关于CockroachDB的吐槽：<br>
+<img src="./trigger.png" style="max-width: 50%" alt="trigger"></p>
+<p>然后觉得这名字起得实在太好。细想了一下，程序猿确实是一个极其有才华（闷骚）的群体，在软件领域，很多取名极富内涵且有趣。</p>
+<h3 id="cockroachdb"><a href="https://www.cockroachlabs.com/" target="_blank" rel="external">CockroachDB</a></h3>
+<p>一个专为云服务和分布式设计的数据库, 可以存储nosql的数据，又支持SQL语言，很受关注。但是同事抱怨每次看到这个名字，心里还是发毛。细想了一下，以cockroach(小强)作为一个分布式数据库，简直是形象地表露了好几个重要特征：</p>
+<ul>
+<li>分布式，无处不在</li>
+<li>高可用性，极其难杀死</li>
+<li>非常灵活</li>
+</ul>
+<h3 id="java-amp-kotlin"><a href="https://mp.weixin.qq.com/s/K6NTWV9gth8Ge-eDvTzWfQ" target="_blank" rel="external">Java &amp; Kotlin</a></h3>
+<p>众所周知，Java是以Java岛来命名的。JetBrains团队在开发了十几年IntelliJ IDEA之后，爱恨交加，决定开发一门自己的语言，然后为了效仿Java一样用岛来命名，于是找到了位于圣彼得堡以西 30 公里处芬兰湾的一个科特林岛，英文就是 Kotlin，一门新的编程语言诞生了。</p>
+<h3 id="google-hadoop"><a href="https://graphics.stanford.edu/~dk/google_name_origin.html" target="_blank" rel="external">Google</a>, <a href="https://www.quora.com/Whats-the-origin-of-the-name-Hadoop" target="_blank" rel="external">Hadoop</a></h3>
+<p>这两个都是生造出来的，原本并不存在。根据斯坦福教授	David Koller<a href="https://graphics.stanford.edu/~dk/google_name_origin.html" target="_blank" rel="external">回忆</a>，谷歌一开始的搜索引擎叫&quot;BackRub&quot;, 因其能分析web的&quot;back links&quot;。后来拉里佩奇一伙人在白板上尝试想出一个与大量数据索引有关的词。有人提出了&quot;googolplex&quot;，拉里佩奇觉得缩写&quot;googol&quot;（词意大概是10^100)更好，然后他同事Sean Anderson就去搜新的域名是否被注册了。但是，他在搜索的时候拼成了“<a href="http://google.com" target="_blank" rel="external">google.com</a>”，发现可以用，后来拉里佩奇觉得这名字也不错，于是注册了这个域名。</p>
+<p>这也是为什么一直以来都有人质疑google的名字是打错了。</p>
+<p>而Hadoop更无厘头，根据作者Doug Cutting所说，这名字就是他儿子给一个毛绒象取得，但是觉得简短，好记，从没在别的地方用过，于是就拿来用了。</p>
+<h3 id="kubernetes-amp-helm">kubernetes &amp; helm</h3>
+<p>Kubernetes是这两年大火的自动化部署、管理容器应用的系统，一般简称k8s。这个名字由来应该和Docker本身很有关系。Docker的logo是一条鲸鱼顶着一堆集装箱的图案,容器在这里被看成一个个的集装箱，相互独立隔绝。</p>
+<img src="https://tr4.cbsistatic.com/hub/i/r/2016/10/18/831f017c-ee68-4bd6-8a5c-ab31b4d35d6d/resize/770x/1cedcf2f03388a9720835a628a8a9765/dockerhero.jpg" style="max-width: 50%" alt="docker">
+<p>Kubernetes在希腊语里面是舵手的意思，英文helmsman，象征掌管、运输着一个个集装箱，这也就是为什么我们会有<code>kubectl</code>（kubernetes control) 和 <code>helm</code>，而logo就是一个船的舵把。</p>
+<img src="https://kubernetes.io/images/favicon.png" style="max-width: 50%" alt="kubernetes">
+<h3 id="gnus-not-unix">GNU’s Not Unix</h3>
+<p>作为开源世界大名鼎鼎的操作系统以及项目，GNU的命名也是很极客范，全称是GNU的递归形式——GNU’s Not Unix, 无限自我调用展开。</p>
+<h3 id="ruby-amp-gem"><a href="https://www.ruby-lang.org/en/" target="_blank" rel="external">Ruby</a> &amp; gem:</h3>
+<p>Ruby就是红宝石的意思，而作为它的包管理器和命令行工具，叫gem(宝石)也不奇怪啦。</p>
+<h3 id="vue-amp-react"><a href="https://vuejs.org/v2/guide/" target="_blank" rel="external">Vue</a> &amp; <a href="https://reactjs.org/" target="_blank" rel="external">React</a>:</h3>
+<p>这两个前端框架（也许应该叫库）的取名直接就体现了他们自己代表的特点：</p>
+<ul>
+<li>
+<p>Vue 是 View 的法语，诞生之初就是基于MVVM的思想设计，但是强调核心库专注于view这一层，因此库如其名。</p>
+</li>
+<li>
+<p>React 也强调自己仅仅是View层，但是因为其强烈受函数式编程的思想，所以突出自己响应式，声明式，自然名字也是很符合了。</p>
+</li>
+</ul>
+<p>一直不知道Angular(有角的)取这名是为什么，难道想说明自己更迭并不平滑:)，相信从Angular.js到Angular的经历大家都能体会。</p>
+<h3 id="camel-case"><a href="https://note.youdao.com/" target="_blank" rel="external">camel case</a></h3>
+<p>驼峰命名法，其实这个名字也很形象了。因为变量命名一直是老大难，为了形象说明这个变量啥意思，经常要用好几个单词，所以一般把除掉第一个单词的首字母大写，比如 thisVariableSucks, 中间两个字母耸起，宛如驼峰，因此得名。</p>
+<h3 id="android"><a href="https://www.android.com/" target="_blank" rel="external">Android</a></h3>
+<p>安卓就是机器人的意思，但比较有意思的是它每一个版本代号的起名，基本都是谷歌公司一种糖果的名字：</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cupcake(纸杯蛋糕)</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>Donut(甜甜圈)</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>Eclair(长形松饼)</td>
+<td>2.0–2.1</td>
+</tr>
+<tr>
+<td>Froyo(冻酸奶)</td>
+<td>2.2–2.2.3</td>
+</tr>
+<tr>
+<td>Gingerbread(姜饼)</td>
+<td>2.3–2.3.7</td>
+</tr>
+<tr>
+<td>Honeycomb（蜂窝）</td>
+<td>3.0–3.2.6</td>
+</tr>
+<tr>
+<td>Ice Cream Sandwich （冰淇淋三明治）</td>
+<td>4.0–4.0.4</td>
+</tr>
+<tr>
+<td>Jelly Bean （果冻豆）</td>
+<td>4.1–4.3.1</td>
+</tr>
+<tr>
+<td>KitKat（奇巧巧克力）</td>
+<td>4.4–4.4.4, 4.4W–4.4W.2</td>
+</tr>
+<tr>
+<td>Lollipop（棒棒糖）</td>
+<td>5.0–5.1.1</td>
+</tr>
+<tr>
+<td>Marshmallow（棉花糖）</td>
+<td>6.0–6.0.1</td>
+</tr>
+<tr>
+<td>Nougat（牛轧糖）</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Oreo（奥利奥）</td>
+<td>8</td>
+</tr>
+<tr>
+<td>P （据说是Pistachio Ice Cream？）</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>当然，还有很多取名也非常有意思，比如</p>
+<ul>
+<li><a href="https://www.yahoo.com/" target="_blank" rel="external">Yahoo!</a></li>
+<li><a href="https://www.python.org/" target="_blank" rel="external">Python</a></li>
+<li><a href="https://www.getpostman.com/" target="_blank" rel="external">Postman</a></li>
+<li><a href="https://prometheus.io/" target="_blank" rel="external">Prometheus</a></li>
+<li><a href="https://codepen.io/" target="_blank" rel="external">codepen</a></li>
+</ul>
+<p>因为懒，不一一赘述。</p>
 
                 
 
@@ -271,12 +343,12 @@ Then it wraps the component inside a table:</p>
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2017/12/25/一次关于networking的对话/" data-toggle="tooltip" data-placement="top" title="一次关于networking的对话">&larr; Previous Post</a>
+                            <a href="/2018/05/07/Treechart-In-D3/" data-toggle="tooltip" data-placement="top" title="Treechart In D3">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2017/05/27/To-My-Graduation/" data-toggle="tooltip" data-placement="top" title="To my graduation">Next Post &rarr;</a>
+                            <a href="/2018/03/08/react-global-state-management/" data-toggle="tooltip" data-placement="top" title="React global state management">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -306,7 +378,7 @@ Then it wraps the component inside a table:</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#why-cloud-based-serverless-architecture"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Why cloud-based serverless architecture?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#then-why-firebase"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Then why Firebase?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#implementations"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Implementations</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#schedule-cron-tasks-with-cloud-functions"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Schedule (Cron) tasks with Cloud Functions</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#render-elements-iteratively-in-react"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Render elements iteratively in React</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cockroachdb"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">CockroachDB</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#java-amp-kotlin"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Java & Kotlin</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#google-hadoop"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Google, Hadoop</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#kubernetes-amp-helm"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">kubernetes & helm</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#gnus-not-unix"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">GNU’s Not Unix</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ruby-amp-gem"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Ruby & gem:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#vue-amp-react"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Vue & React:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#camel-case"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">camel case</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#android"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">Android</span></a></li></ol>
         
         </div>
       </aside>
@@ -326,11 +398,15 @@ Then it wraps the component inside a table:</p>
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Cloud" title="Cloud">Cloud</a>
-                        
-                          <a class="tag" href="/tags/#Firebase" title="Firebase">Firebase</a>
-                        
                           <a class="tag" href="/tags/#React.js" title="React.js">React.js</a>
+                        
+                          <a class="tag" href="/tags/#CockroachDB" title="CockroachDB">CockroachDB</a>
+                        
+                          <a class="tag" href="/tags/#Google" title="Google">Google</a>
+                        
+                          <a class="tag" href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
+                        
+                          <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
                         
                     </div>
                 </section>
@@ -359,8 +435,8 @@ Then it wraps the component inside a table:</p>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "henryzhao";
-    var disqus_identifier = "http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/";
-    var disqus_url = "http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/";
+    var disqus_identifier = "http://hzhao.me/2018/04/02/Interesting-Software-Names/";
+    var disqus_url = "http://hzhao.me/2018/04/02/Interesting-Software-Names/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

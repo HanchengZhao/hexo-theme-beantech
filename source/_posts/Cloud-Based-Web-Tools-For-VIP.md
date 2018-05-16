@@ -6,7 +6,7 @@ subtitle:
 header-img: "longwood.JPG"
 tags:
 - Cloud
-- Reactjs
+- React.js
 - Firebase
 categories:
 - Projects
