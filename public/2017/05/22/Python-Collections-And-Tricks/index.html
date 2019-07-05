@@ -2,13 +2,13 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Henry&#39;s thoughts">
-    <meta name="keyword"  content="">
+    <meta name="keyword" content>
     <link rel="shortcut icon" href="/img/hz_logo.JPG">
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -149,14 +149,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -215,12 +215,12 @@
                 <blockquote>
 <p>Introduction of Python unique data structures of high performance and summary of pythonic ways of coding</p>
 </blockquote>
-<h2 id="python-collections">Python collections</h2>
+<h2><span id="python-collections">Python collections</span></h2>
 <blockquote>
-<p>Here is <a href="https://docs.python.org/2.7/library/collections.html#collections.ChainMap" target="_blank" rel="external">collection ducumentation</a></p>
+<p>Here is <a href="https://docs.python.org/2.7/library/collections.html#collections.ChainMap" target="_blank" rel="noopener">collection ducumentation</a></p>
 </blockquote>
 <p>Besides <code>list</code>, <code>dictionary</code>, <code>tuple</code>, python provides some high-performance container datatypes in the module <code>collections</code>, which I find extremely useful when dealing with hashtable or stack problems. You can always implement these by using basic <code>list</code> or <code>dictionary</code>, but it really eases your life if you know their existence and are familiar with their APIs beforehand.</p>
-<h3 id="deque-pronounced-deck-not-d-queue">deque (pronounced “deck”, not “D-queue”)</h3>
+<h3><span id="deque-pronounced-deck-not-d-queue">deque (pronounced “deck”, not “D-queue”)</span></h3>
 <p>Deque is basically a double-ended-queue structure and supports efficient operations like appends and pops from both sides. It has totally same operations as <code>list</code>, but runs in O(1) in operations like pop(0), appendleft(x).</p>
 <p><strong>To initialize</strong>: It takes a iterable and a maxlen. From official document:</p>
 <blockquote>
@@ -270,30 +270,30 @@ Extend the left side of the deque by appending elements from iterable. Note, the
 <p>rotate(n): Rotate the deque n steps to the right. If n is negative, rotate to the left. Rotating one step to the right is equivalent to: d.appendleft(d.pop()).</p>
 </li>
 </ul>
-<h3 id="ordereddict">OrderedDict</h3>
+<h3><span id="ordereddict">OrderedDict</span></h3>
 <p>If you want to keep the order of the items you insert into a dictionary, <code>OrderedDict</code> is the one you need.</p>
  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># regular unsorted dictionary</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'banana'</span>: <span class="number">3</span>, <span class="string">'apple'</span>: <span class="number">4</span>, <span class="string">'pear'</span>: <span class="number">1</span>, <span class="string">'orange'</span>: <span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># dictionary sorted by key</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>OrderedDict(sorted(d.items(), key=<span class="keyword">lambda</span> t: t[<span class="number">0</span>]))</span><br><span class="line">OrderedDict([(<span class="string">'apple'</span>, <span class="number">4</span>), (<span class="string">'banana'</span>, <span class="number">3</span>), (<span class="string">'orange'</span>, <span class="number">2</span>), (<span class="string">'pear'</span>, <span class="number">1</span>)])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># dictionary sorted by value</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>OrderedDict(sorted(d.items(), key=<span class="keyword">lambda</span> t: t[<span class="number">1</span>]))</span><br><span class="line">OrderedDict([(<span class="string">'pear'</span>, <span class="number">1</span>), (<span class="string">'orange'</span>, <span class="number">2</span>), (<span class="string">'banana'</span>, <span class="number">3</span>), (<span class="string">'apple'</span>, <span class="number">4</span>)])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># dictionary sorted by length of the key string</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>OrderedDict(sorted(d.items(), key=<span class="keyword">lambda</span> t: len(t[<span class="number">0</span>])))</span><br><span class="line">OrderedDict([(<span class="string">'pear'</span>, <span class="number">1</span>), (<span class="string">'apple'</span>, <span class="number">4</span>), (<span class="string">'orange'</span>, <span class="number">2</span>), (<span class="string">'banana'</span>, <span class="number">3</span>)])</span><br></pre></td></tr></table></figure>
 <p><strong>OrderedDict.popitem(last=True)</strong><br>
 The popitem() method for ordered dictionaries returns and removes a (key, value) pair. The pairs are returned in LIFO order if last is true or FIFO order if false.<br>
 (This method could be very useful in LRU cache design)</p>
-<h3 id="defaultdict">defaultdict</h3>
+<h3><span id="defaultdict">defaultdict</span></h3>
 <p>This datatype provides a factory function to store customized key-value pairs into dictionaries.<br>
 From doc:</p>
 <p>It is easy to group a sequence of key-value pairs into a dictionary of lists:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [(<span class="string">'yellow'</span>, <span class="number">1</span>), (<span class="string">'blue'</span>, <span class="number">2</span>), (<span class="string">'yellow'</span>, <span class="number">3</span>), (<span class="string">'blue'</span>, <span class="number">4</span>), (<span class="string">'red'</span>, <span class="number">1</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = defaultdict(list)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>    d[k].append(v)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.items()</span><br><span class="line">[(<span class="string">'blue'</span>, [<span class="number">2</span>, <span class="number">4</span>]), (<span class="string">'red'</span>, [<span class="number">1</span>]), (<span class="string">'yellow'</span>, [<span class="number">1</span>, <span class="number">3</span>])]</span><br></pre></td></tr></table></figure>
 <p>This technique is simpler and faster than an equivalent technique using dict.setdefault():</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>    d.setdefault(k, []).append(v)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.items()</span><br><span class="line">[(<span class="string">'blue'</span>, [<span class="number">2</span>, <span class="number">4</span>]), (<span class="string">'red'</span>, [<span class="number">1</span>]), (<span class="string">'yellow'</span>, [<span class="number">1</span>, <span class="number">3</span>])]</span><br></pre></td></tr></table></figure>
-<h3 id="heapq">heapq</h3>
-<h2 id="tricks">Tricks</h2>
+<h3><span id="heapq">heapq</span></h3>
+<h2><span id="tricks">Tricks</span></h2>
 <p>(to be filled)</p>
-<h3 id="sorted">sorted()</h3>
-<h3 id="enumerate">enumerate()</h3>
+<h3><span id="sorted">sorted()</span></h3>
+<h3><span id="enumerate">enumerate()</span></h3>
 <p>It is an efficient way to loop through a list and get the index and value at the same time.</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enumerate(sequence, start=<span class="number">0</span>) <span class="comment"># start is optional, from 0 as default</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>seasons = [<span class="string">'Spring'</span>, <span class="string">'Summer'</span>, <span class="string">'Fall'</span>, <span class="string">'Winter'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(enumerate(seasons))</span><br><span class="line">[(<span class="number">0</span>, <span class="string">'Spring'</span>), (<span class="number">1</span>, <span class="string">'Summer'</span>), (<span class="number">2</span>, <span class="string">'Fall'</span>), (<span class="number">3</span>, <span class="string">'Winter'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(enumerate(seasons, start=<span class="number">1</span>))</span><br><span class="line">[(<span class="number">1</span>, <span class="string">'Spring'</span>), (<span class="number">2</span>, <span class="string">'Summer'</span>), (<span class="number">3</span>, <span class="string">'Fall'</span>), (<span class="number">4</span>, <span class="string">'Winter'</span>)]</span><br></pre></td></tr></table></figure>
-<h3 id="zip">zip()</h3>
-<h3 id="list-comprehesion">list comprehesion</h3>
+<h3><span id="zip">zip()</span></h3>
+<h3><span id="list-comprehesion">list comprehesion</span></h3>
 <p>Python provides a very natural way to construct list, no matter what dimension.</p>
-<h5 id="basic-syntax">Basic syntax:</h5>
+<h5><span id="basic-syntax">Basic syntax:</span></h5>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ expression <span class="keyword">for</span> item <span class="keyword">in</span> list <span class="keyword">if</span> conditional ]</span><br></pre></td></tr></table></figure>
 <p>which is equivalent to</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> list:</span><br><span class="line">    <span class="keyword">if</span> conditional:</span><br><span class="line">        expression</span><br></pre></td></tr></table></figure>
@@ -304,7 +304,7 @@ From doc:</p>
 <p>another example:</p>
 <script src="https://gist.github.com/HanchengZhao/69e152c12509806653061c95c66d0ada.js"></script>
 <p>Here it returns the first node in a value list of a dictionary that has more than 1 node. <code>if node[1]</code> will cause <code>IndexError: list index out of range</code>, but <code>if node[1:]</code> works.</p>
-<h3 id="sort-and-sorted">sort() and sorted()</h3>
+<h3><span id="sort-and-sorted">sort() and sorted()</span></h3>
 <p>sort() sorts objects of list, it does not return list. So you can not use <code>''.join(list(str).sort())</code> to sort string. Instead, you can try <code>''.join(sorted(str))</code> because sorted will return a new sorted list from the items in iterable.</p>
 
                 
@@ -349,7 +349,7 @@ From doc:</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#python-collections"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Python collections</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#deque-pronounced-deck-not-d-queue"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">deque (pronounced “deck”, not “D-queue”)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ordereddict"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">OrderedDict</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#defaultdict"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">defaultdict</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#heapq"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">heapq</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#tricks"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Tricks</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sorted"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">sorted()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#enumerate"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">enumerate()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#zip"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">zip()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#list-comprehesion"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">list comprehesion</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#basic-syntax"><span class="toc-nav-number">2.4.0.1.</span> <span class="toc-nav-text">Basic syntax:</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sort-and-sorted"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">sort() and sorted()</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Python collections</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">deque (pronounced “deck”, not “D-queue”)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">OrderedDict</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">defaultdict</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">heapq</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Tricks</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">sorted()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">enumerate()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">zip()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">list comprehesion</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.4.0.1.</span> <span class="toc-nav-text">Basic syntax:</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">sort() and sorted()</span></a></li></ol></li></ol>
         
         </div>
       </aside>
