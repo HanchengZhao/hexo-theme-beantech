@@ -26,7 +26,7 @@ Luckily, [gitlab API](https://docs.gitlab.com/ee/api/) provides all the function
 
 Before we proceed, we need a set of command line tools to boost our efficiency.
 
-### [jq](https://stedolan.github.io/jq/tutorial/)
+### jq
 
 > jq is like sed for JSON data
 > You can use `jq` to easily extract useful information and format them in the way you want. For example:
@@ -41,7 +41,7 @@ Before we proceed, we need a set of command line tools to boost our efficiency.
 
 You can even use conditional operator or loop functions with `jq`, which is definitely worth checking out the [manual](https://stedolan.github.io/jq/manual/) if you are dealing with json form cli a lot.
 
-### [yq](https://github.com/kislyuk/yq)
+### yq
 
 yq is similar to jq, but especially for `yaml` files. It's also written in python.
 
