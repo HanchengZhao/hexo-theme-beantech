@@ -7,72 +7,24 @@
     </url>
 
     <url>
-        <loc>http://hzhao.me/2019/04/03/Automatically-create-merge-request-through-gitlab-api/</loc>
-        <lastmod>2019-07-05T18:39:40.323Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2017/12/25/%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Enetworking%E7%9A%84%E5%AF%B9%E8%AF%9D/</loc>
-        <lastmod>2019-04-04T01:46:35.096Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2018/03/08/react-global-state-management/</loc>
-        <lastmod>2019-04-04T01:46:35.089Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/</loc>
-        <lastmod>2019-04-04T01:46:35.088Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2018/05/07/Treechart-In-D3/</loc>
-        <lastmod>2019-04-04T01:46:35.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2017/05/27/To-My-Graduation/</loc>
-        <lastmod>2019-04-04T01:46:35.055Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks/</loc>
-        <lastmod>2019-04-04T01:46:35.054Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2017/02/07/JavaScript-Flaws/</loc>
-        <lastmod>2019-04-04T01:46:35.052Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://hzhao.me/2018/04/02/Interesting-Software-Names/</loc>
-        <lastmod>2019-04-04T01:46:35.046Z</lastmod>
+        <lastmod>2019-08-17T01:54:29.794Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/04/08/python-leetcode-trick/</loc>
+        <lastmod>2019-08-17T01:44:22.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2019/04/03/Automatically-create-merge-request-through-gitlab-api/</loc>
+        <lastmod>2019-08-17T01:38:19.275Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -80,7 +32,63 @@
 
     <url>
         <loc>http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/</loc>
-        <lastmod>2019-04-04T01:46:35.044Z</lastmod>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/02/07/JavaScript-Flaws/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/05/07/Treechart-In-D3/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/12/25/%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Enetworking%E7%9A%84%E5%AF%B9%E8%AF%9D/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/05/27/To-My-Graduation/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/03/08/react-global-state-management/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

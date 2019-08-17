@@ -204,9 +204,9 @@
                 <blockquote>
 <p>Javascript design flaws and wired parts</p>
 </blockquote>
-<h3><span id="javascript-flaws">JavaScript flaws</span></h3>
+<h3 id="javascript-flaws">JavaScript flaws</h3>
 <p>JavaScript is the most dominant programming language for the web. Powerful as it is, JavaScript has many design flaws that may cause confusions for both newbie and seasoned developers . So it’s worth making a summary here.</p>
-<h3><span id="data-type-and-variables">Data type and variables</span></h3>
+<h3 id="data-type-and-variables">Data type and variables</h3>
 <ul>
 <li><code>NaN</code> can not be compared with any number, like <code>NaN === NaN; // false</code>, the only way to check is by using <code>isNaN()</code>:</li>
 </ul>
@@ -219,20 +219,20 @@
 <p>If a variable is defined without <code>var</code>, it is set to be a global variable, which may cause some errors that are hard to debug. This problem can be solved by adding <code>'use strict';</code> in the first line</p>
 </li>
 </ul>
-<h3><span id="strings">Strings</span></h3>
+<h3 id="strings">Strings</h3>
 <p>Strings are imutable, like</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'Test'</span>;</span><br><span class="line">s[<span class="number">0</span>] = <span class="string">'X'</span>;     </span><br><span class="line">alert(s); <span class="comment">// s is still 'Test'</span></span><br></pre></td></tr></table></figure>
-<h3><span id="in-operator">in operator</span></h3>
+<h3 id="in-operator">in operator</h3>
 <p><strong>in</strong> can only be used to check whether a prop is in an object like:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Arrays</span></span><br><span class="line"><span class="keyword">var</span> trees = [<span class="string">'redwood'</span>, <span class="string">'bay'</span>, <span class="string">'cedar'</span>, <span class="string">'oak'</span>, <span class="string">'maple'</span>];</span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> trees        <span class="comment">// returns true</span></span><br><span class="line"><span class="number">3</span> <span class="keyword">in</span> trees        <span class="comment">// returns true</span></span><br><span class="line"><span class="number">6</span> <span class="keyword">in</span> trees        <span class="comment">// returns false</span></span><br><span class="line"><span class="string">'bay'</span> <span class="keyword">in</span> trees    <span class="comment">// returns false (you must specify the </span></span><br><span class="line">                  <span class="comment">// index number, not the value at that index)</span></span><br><span class="line"><span class="string">'length'</span> <span class="keyword">in</span> trees <span class="comment">// returns true (length is an Array property)</span></span><br><span class="line"><span class="built_in">Symbol</span>.iterator <span class="keyword">in</span> trees <span class="comment">// returns true (arrays are iterable, works only in ES2015+)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Predefined objects</span></span><br><span class="line"><span class="string">'PI'</span> <span class="keyword">in</span> <span class="built_in">Math</span>          <span class="comment">// returns true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Custom objects</span></span><br><span class="line"><span class="keyword">var</span> mycar = &#123;<span class="attr">make</span>: <span class="string">'Honda'</span>, <span class="attr">model</span>: <span class="string">'Accord'</span>, <span class="attr">year</span>: <span class="number">1998</span>&#125;;</span><br><span class="line"><span class="string">'make'</span> <span class="keyword">in</span> mycar  <span class="comment">// returns true</span></span><br></pre></td></tr></table></figure>
 <p>It has different function than ‘in’ in Python, whether <strong>in</strong> can be used to check element existence.</p>
-<h3><span id="conditions">Conditions</span></h3>
+<h3 id="conditions">Conditions</h3>
 <p>JavaScript uses <code>if () { ... } else { ... }</code> to set conditions. But if there is only one statement in a block, <code>{}</code> can be removed. like</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>)</span><br><span class="line">    alert(<span class="string">'adult'</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    alert(<span class="string">'teenager'</span>);</span><br></pre></td></tr></table></figure>
 <p>However, there are risks doing this:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>)</span><br><span class="line">    alert(<span class="string">'adult'</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'age &lt; 18'</span>);</span><br><span class="line">    alert(<span class="string">'teenager'</span>); <span class="comment">// this line is actually not inside else</span></span><br></pre></td></tr></table></figure>
 <p>So it is better to always include <code>{}</code></p>
-<h3><span id="loops">Loops</span></h3>
+<h3 id="loops">Loops</h3>
 <ul>
 <li>“foreach” vs “for of” vs “for in”
 <ul>
@@ -243,10 +243,10 @@
 </ul>
 </li>
 </ul>
-<h3><span id="map-and-set">Map and Set</span></h3>
+<h3 id="map-and-set">Map and Set</h3>
 <p>In JavaScript, Map can be inplemented with Object<code>{}</code>, buy the key has to be a string. So ES6 introduced a new type <code>Map</code>.<br>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">Map Reference</a></p>
-<h3><span id="objects">Objects</span></h3>
+<h3 id="objects">Objects</h3>
 <p>The property name has to be a valid name in order to let <code>Objects.property</code> to access. For example,</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> me = &#123;</span><br><span class="line">    name: <span class="string">'henry'</span></span><br><span class="line">    <span class="string">"university"</span>: <span class="string">"UD"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>&quot;university&quot;</code> is not a valid property name here, so it has to be accessed by<br>
@@ -309,7 +309,7 @@ The this object is bound at runtime based on the context in which a function is 
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">JavaScript flaws</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Data type and variables</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Strings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">in operator</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Conditions</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Loops</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Map and Set</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Objects</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#javascript-flaws"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">JavaScript flaws</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#data-type-and-variables"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Data type and variables</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#strings"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Strings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#in-operator"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">in operator</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#conditions"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Conditions</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#loops"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Loops</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#map-and-set"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Map and Set</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#objects"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">Objects</span></a></li></ol>
         
         </div>
       </aside>
