@@ -1,7 +1,7 @@
 ---
 title: 一些刷题常用的 python 技巧
 catalog: true
-date: 2018-04-08 23:51:10
+date: 2019-08-16 22:51:10
 subtitle:
 header-img: "antelope_valley.JPG"
 tags:
@@ -25,8 +25,6 @@ List 的初始化一般用 List comprehension，往往能一行解决问题
 ```python
 # 1d array
 l = [0 for _ in range(len(array)]
-# or
-l = [0] * len(array)
 
 # 2d
 l = [[0] for i in range(cols) for j in range(rows)]
@@ -342,7 +340,7 @@ char 则是反向操作：
 
 有时候初始化我们需要设定 `Math.max()` 和 `Math.min()`, 在 python 中分别以 `float('inf')` 和 `float('-inf')`表示
 
-我们也可以这么做：
+在 python2 中我们也可以这么做：
 
 ```
 import sys
