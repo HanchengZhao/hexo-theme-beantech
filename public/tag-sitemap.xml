@@ -2,57 +2,57 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
+        <loc>http://hzhao.me/tags/Cloud/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://hzhao.me/tags/Firebase/</loc>
-        <lastmod>2019-04-04T01:46:35.044Z</lastmod>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hzhao.me/tags/JavaScript/</loc>
-        <lastmod>2019-04-04T01:46:35.052Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/tags/D3-js/</loc>
-        <lastmod>2019-04-04T01:46:35.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/tags/Cloud/</loc>
-        <lastmod>2019-04-04T01:46:35.088Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/tags/React/</loc>
-        <lastmod>2019-04-04T01:46:35.089Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/tags/Redux/</loc>
-        <lastmod>2019-04-04T01:46:35.089Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/tags/Mobx/</loc>
-        <lastmod>2019-04-04T01:46:35.089Z</lastmod>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hzhao.me/tags/Thoughts/</loc>
-        <lastmod>2019-04-04T01:46:35.096Z</lastmod>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/D3-js/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/React/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/Redux/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/Mobx/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

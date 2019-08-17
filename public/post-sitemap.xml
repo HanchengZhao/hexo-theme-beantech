@@ -31,48 +31,8 @@
     </url>
 
     <url>
-        <loc>http://hzhao.me/2017/12/25/%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Enetworking%E7%9A%84%E5%AF%B9%E8%AF%9D/</loc>
-        <lastmod>2019-04-04T01:46:35.096Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2018/03/08/react-global-state-management/</loc>
-        <lastmod>2019-04-04T01:46:35.089Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/</loc>
-        <lastmod>2019-04-04T01:46:35.088Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2018/05/07/Treechart-In-D3/</loc>
-        <lastmod>2019-04-04T01:46:35.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2017/05/27/To-My-Graduation/</loc>
-        <lastmod>2019-04-04T01:46:35.055Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks/</loc>
-        <lastmod>2019-04-04T01:46:35.054Z</lastmod>
+        <loc>http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -80,15 +40,55 @@
 
     <url>
         <loc>http://hzhao.me/2017/02/07/JavaScript-Flaws/</loc>
-        <lastmod>2019-04-04T01:46:35.052Z</lastmod>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://hzhao.me/2017/11/18/Cloud-Based-Web-Tools-For-VIP/</loc>
-        <lastmod>2019-04-04T01:46:35.044Z</lastmod>
+        <loc>http://hzhao.me/2017/05/22/Python-Collections-And-Tricks/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/05/27/To-My-Graduation/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/05/07/Treechart-In-D3/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2017/12/25/%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Enetworking%E7%9A%84%E5%AF%B9%E8%AF%9D/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/2018/03/08/react-global-state-management/</loc>
+        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

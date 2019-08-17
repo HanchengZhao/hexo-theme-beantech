@@ -14,14 +14,14 @@
     </url>
     
     <url>
-        <loc>http://hzhao.me/about/</loc>
+        <loc>http://hzhao.me/archive/</loc>
         <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://hzhao.me/archive/</loc>
+        <loc>http://hzhao.me/about/</loc>
         <lastmod>2019-04-04T01:46:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
