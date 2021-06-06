@@ -27,7 +27,7 @@ List 的初始化一般用 List comprehension，往往能一行解决问题
 l = [0 for _ in range(len(array)]
 
 # 2d
-l = [[0] for i in range(cols) for j in range(rows)]
+l = [[0 for i in range(cols)] for j in range(rows)]
 ```
 
 ### Start from the behind
