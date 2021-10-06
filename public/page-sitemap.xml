@@ -7,29 +7,29 @@
     </url>
     
     <url>
-        <loc>http://hzhao.me/404.html</loc>
-        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://hzhao.me/archive/</loc>
-        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>http://hzhao.me/about/</loc>
-        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <lastmod>2021-06-06T19:27:23.187Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://hzhao.me/tags/</loc>
-        <lastmod>2019-04-04T01:46:35.000Z</lastmod>
+        <lastmod>2017-11-09T03:34:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://hzhao.me/archive/</loc>
+        <lastmod>2017-11-09T03:30:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://hzhao.me/404.html</loc>
+        <lastmod>2017-11-07T22:24:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

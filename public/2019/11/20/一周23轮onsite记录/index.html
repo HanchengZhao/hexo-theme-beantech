@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Henry&#39;s thoughts" />
+  <meta name="keyword" content="" />
+  <link rel="shortcut icon" href="/img/hz_logo.JPG" />
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script
+    async
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js"
+  ></script>
+  <title>
+     一周23轮 onsite 记录 - Henry Zhao 
+  </title>
+
+  <link
+    rel="canonical"
+    href="http://hzhao.me/2019/11/20/一周23轮onsite记录/"
+  />
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css">
+
+  <!-- Pygments Highlight CSS -->
+  <link rel="stylesheet" href="/css/highlight.css"> <link rel="stylesheet" href="/css/widget.css"> <link rel="stylesheet" href="/css/rocket.css">
+  <link rel="stylesheet" href="/css/signature.css"> <link rel="stylesheet" href="/css/toc.css">
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link
+    href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+
+  <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('aeef710654116e6c546d654f55df71f9.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#python" title="python">python</a>
+                            
+                              <a class="tag" href="/tags/#interview" title="interview">interview</a>
+                            
+                        </div>
+                        <h1>一周23轮 onsite 记录</h1>
+                        <h2 class="subheading">2019 onsite interview retro</h2>
+                        <span class="meta">
+                            Posted by Henry Zhao on
+                            2019-11-20
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Henry Zhao</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="tldr">TL;DR</span></h2>
+<p>总共花了一周时间，飞了三个城市（三番 + 西雅图 + 波士顿），面了四家公司，进行了23轮面试：Adobe 7轮（ 6轮现场 + 1轮远程视频）； Compass 4轮现场；Amazon 6轮（4轮现场+1轮远程+1轮午餐）；Wayfair 6轮（5轮现场 + 1轮午餐），最终有幸拿到四家Offer。</p>
+<p>对我来说这是一次非凡的经历，可能多年以后再回看也会感慨自己居然计划并坚持了下来。</p>
+<p>这打鸡血的一周里，我见了近30个面试官，遇到了各式各样有挑战的、但也很有意思的一些题目。因为这是一个双向选择的过程，我自己其实也问了他们很直接也很好奇的问题，从他们身上接触到看待事物不同的角度和思维方式。有时候真的要迈出舒适区才能看到新东西。</p>
+<h2><span id="前情提要">前情提要</span></h2>
+<p>促成想跳槽的原因主要有以下这些：</p>
+<ul>
+<li>想要搬去科技氛围更浓的大城市。有好几次想参加当地的meetup，但是怎么都找不到自己感兴趣的内容，去过其中一个介绍相对较好的发现志同道合者也甚少。其实美国稍具规模的大城市屈指可数，想要科技氛围好基本也就三番和西雅图，因为之前来过一次波士顿，非常喜欢当地的历史感和环境，所以这三所城市成为我主要考虑的地点。</li>
+<li>公司6月份进行了一次大变动，导致我手头的项目一度停滞不前，所做的内容也逐渐变无趣。</li>
+<li>希望加入一家更大的公司有所提升。其实现在的公司里也有很多我崇拜和仰望的人，比如我们组的Tech lead，我从他们身上学到很多东西。但是项目的影响力或多或少还是与公司的成长速度和规模相关。</li>
+</ul>
+<h2><span id="市场并不好但机会还是要争取">市场并不好，但机会还是要争取</span></h2>
+<p>首先必须承认，今年的跳槽市场并不是很友好（这里针对Senior以下的，因为Senior一直都有人抢着要）。</p>
+<p>Facebook因为一些众所周知的原因以及内部消化了大量Intern，今年除了New grad，直接不招三年工作经历以下的人，很多岗位都要5年+的经历，所以简历连内推都推不进去。Airbnb, Linkedin也基本都是如此，只要三年以上经历的（至少front end 以及 full stack 都是这个要求）。</p>
+<p>Google则是传言因为去年年底针对Google Cloud疯狂招聘，今年L3的职位空缺非常少，秋招开启不久之后就停招了entry-level的职位，感觉难度上也大了很多。我一共电面了两轮，在被加面那一轮直接被考了一道很新的LC hard题，最终没有完全做出。</p>
+<p>另外今年几个独角兽诸如Uber, Lyft，Pinterest上市之后表现也都不是很好。尤其是Uber，在今年IPO之后进行了三轮一千多人的裁员。我拿到他们家面试的时候刚进行到第二轮。我十分好奇地询问为什么边裁员边招人，recruiter答说Uber ATG, Uber EATS都还不受影响。于是我硬着头皮面了Uber ATG, 面完感觉挺好，题目也都做出来了，但是一周后被通知决定不move forward。大概两周之后，在新闻上看到ATG和EATS也裁了300多工程师。</p>
+<p>情形很不好，但同时机会还是有的。并不是所有公司的工作经历要求都像FB那么严格，我后面投的很多岗位都要求3-5年经验，但是最终都给了面试。而像亚马逊面的岗位，recruiter直接说其实网站上还没放出来，但是内部系统有空位。</p>
+<p>关于亚马逊，确实比较玄学。其实在此之前已经找亚马逊的朋友内推过了很多遍，每次查系统都是显示 <code>No longer under consideration</code>。在拿到Compass的面试之后，我在网上找到一个华人recuiter主动介绍了我的情况，询问有没有 front end 相关的职位。这位Recuiter相当认真负责，说自己手上并没有前端相关的职位，但是可以推荐给她的同事。她当天给我发了OA， 我做完后基本第二天就确定了Onsite面试。事实证明，简历拒在亚马逊是没有冷冻期的。</p>
+<p>不要盲信网上的人云亦云，甚至官方网站或者Lindedin Post的职位都是滞后的，能直接和HR或是Recruiter沟通是效率和真实性最高的。</p>
+<h2><span id="most-things-are-negotiable">Most things are negotiable</span></h2>
+<p>因为想一次性面四家，所以在行程安排上就要相对灵活。</p>
+<p>最终在相互协调下，Adobe负责我从费城飞往三番的机票和一晚酒店，Compass负责我从三番飞往西雅图的机票加一晚酒店，Amazon负责了我后续两晚的酒店，Wayfair帮我定了从西雅图到波士顿，再从波士顿回费城的机票，另加一晚酒店。</p>
+<p>很多人害怕和公司提太多要求，觉得公司可能会撤回面试。美国这边的HR、recruiter最终目的还是为了招到人，而且也理解很多面试者会同时面好几家，一般对于面试者合理的要求都会尽可能满足。</p>
+<p>在Wayfair的最后一轮和HR直接一对一交谈的时候，她和我说这时候她绝对是站在我这一边的，因为她的目的就是促成这一次招人。她此时已经知道了我在面好几家公司，所以她告诉我如果其它公司给了任何数字都尽量及时告知，如果是待遇方面的问题，她绝对尽可能帮我向公司谈。</p>
+<p>亚马逊那边也是同样的体验。虽然亚马逊的Recruiter在我这次感受中是最aggressive的（比如不提前发邮件约时间直接打电话过来），但是在面试安排上也是相当得配合，经常在周末或者下班时间还会回复邮件。我在做完OA的时候离我开启面试之旅只有一周时间，约了18号面试直到15号才能确定下来。最后Recruiter也是争取找到了有合适面试时间的面试官们，在面试前一天给我发了整个面试官名单。当然，后面有一些临时的变动，但是整个过程我能感受到她们为了招人所付出的努力。</p>
+<p>可以商量的甚至还有面试内容。谷歌的recruiter就问我想面前端岗还是general hire，最终结合他给我的建议是选择了general，因为考虑到算法相对好准备，而且general的选择更多。网上就有人Po出面试经历，一个转专业的PHD，和recruiter说不要安排任何系统设计相关的题，只想面算法，最后也是给安排了四轮算法面并拿到了offer。</p>
+<p>当拿到Offer之后，具体想去哪一个城市也是可以谈的。Adobe在三番和西雅图都有组，所以当时也是让我从两者中选其一。对于程序员来说，选不同的地点只是换个地方写代码而已，交流基本都可以根据视频会议或者Slack之类的解决，所以公司很大程度上并不在意是否一定要在一栋楼里。更有甚者像Github, Gitlab是只要入职了，全球范围内供选择，并且在文化上也是鼓励员工远程工作。</p>
+<p>绝大多数不涉及到原则性问题的东西都是可以谈的，这种协商能力其实也是程序员们除了代码能力之外很重要的一点，在面试后续的offer compete过程中尤为重要。如果对北美程序员薪资待遇感兴趣的朋友可以访问<br>
+<a href="https://www.levels.fyi/" target="_blank" rel="external">https://www.levels.fyi/</a> 数据相对还是比较准确的。</p>
+<h2><span id="面试经过">面试经过</span></h2>
+<h3><span id="adobe">Adobe</span></h3>
+<img src="./04827907527b8cceffdb956fabaeb262.jpg" style="max-width: 50%" alt="adobe">
+Adobe不是我今年的第一家Onsite（大概在几周之前去面过一家费城startup），却是这一周面试的第一站。公司总部在San Jose，但是我面的这个组在三番市内，Mission bay边上。
+<h4><span id="一共10轮面试onsite-6轮视频4轮">一共10轮面试，Onsite 6轮+视频4轮</span></h4>
+<p>因为我是remote candidate的缘故，在Onsite之前已经进行了三轮视频面试，和两个manager和一个senior谈得还挺顺利，主要还是围绕简历项目和JS相关的。</p>
+<p>面试时间约在中午，所以第一轮就是午饭轮。Adobe内部是有食堂的，但是不像硅谷其它大公司那样是对员工免费，据说相对于外面吃会便宜很多，反正面试者是可以免费吃的。因为是一位印裔面试官，所以直接跟着点了些印度菜。</p>
+<p>前一天刚到三番就发生了地震，所以见面的时候还开了几句玩笑说被地震欢迎了，没想到随口一说的事变成了一道面试设计题。。。本以为面试轮就是纯聊，但没吃几口就要开始白板画图。</p>
+<p>后面几轮就是比较常规的算法以及简历项目讨论。其中一轮比较有趣，面试官是Senior director，他自称相当于整个项目的VP。经历了前面几轮后，我心态慢慢放松了下来，开始询问一些自己感兴趣的问题，比如如何从一个程序员转型做管理，经历是如何的，难点在哪里。这位主管说之前没有人问过他类似的问题，然后饶有兴致地开始给我介绍职业变迁历程。</p>
+<p>这位大神七几年UC系毕业之后最开始给Unix写Boot system，后来开始在苹果机上做开发，那时候连Linux都还没诞生。他在九十年代加入了Pixar开始做图形处理相关的工作，之后慢慢转型做管理之后加入了Adobe。他说做管理的难点在于计算机是determistic, 而人不可测的地方太多。做管理需要很高的情商以及共情能力。发现这些转型做管理的都有些共性，回望的时候都会说还是想念当初能写代码的日子。</p>
+<p>聊完故事之后他出了一道非常不寻常的题目，在我看来就是类似中国小学奥数题，而我的做法也非常得“小学奥数”，写了好几个分数相乘就直接得出来了，让他非常惊讶了一会，说从没见人这么做。所以面试中不按常规出牌的事还是经常发生，见招拆招就好。</p>
+<p>最后一轮就是Hiring manager，一位挺有趣的法国人，中间想问我一个关于API 设计里Idempotency的概念，但是说了半天见我不解直接在白板上写了这个词，说可能他的法国口音给我造成了理解困难。事实是他写出来我也不知道，后来才想起来是考察幂等的概念，赶紧解释了一番。</p>
+<p>面试从中午12：15面到了下午4：45，平均45分钟一轮，一共六轮。总体来讲我觉得难度适中，他们对于技术栈以及文化是否匹配看得比较重要，聊不聊的来感觉非常关键。</p>
+<p>回来第二天后recruiter发信说他们的想让在巴黎的一位主管再面一轮。因为时差的缘故以及我个人想一周内全部面完，所以马上约了第二天早上7点半的面试，总体也是以问答为主。至此不算HR电话总共十轮，终于面完了Adobe。</p>
+<h3><span id="compass">Compass</span></h3>
+<p>Compass是这几年很火的一家房地产独角兽公司，总部在纽约，拿到了孙正义愿景基金第一期的投资，声称以科技的力量简化买卖房屋的流程。去年他们从微软挖来了AI的CTO来主管技术，在西雅图新开了一个office，今年在疯狂招人中。可是我去面之前其实对地产行业是有担忧的，尤其是今年发生了Wework IPO泡汤这样的事件。不过也正是有这些疑问，让我在面试中非常坦诚地可以发问，最后过程体验反而令我感觉挺好的。</p>
+<p>正如前面所说，Adobe临时安排了一场视频面试。我当天早上7点钟爬起来面完，然后十点多就去了Compass进行第二场面试，好在公司离酒店不远，楼就在亚马逊大楼边上（估计也是因为挖人方便）。</p>
+<p>原本安排了连续四轮四个小时，但后来临时安排了午餐，不过就纯吃饭聊天了。面试内容覆盖比较全面，有常规的LC算法题（白板），也有专门考察JS的函数式编程题（现场跑代码），另外还有系统设计加简历详述。</p>
+<p>这里有趣的一轮同样是和manager聊得那轮。他提到在微软干了十几年，后来去了Airbnb，去年才刚到Compass来。</p>
+<ul>
+<li>为什么来Compass?</li>
+</ul>
+<p>我就直问Airbnb明年马上要IPO了为什么这个时候选择跳槽来这里。他的解释是因为Airbnb已经过了高速增长阶段，整个平台的搭建已经趋于稳定，很难再推到重来做一些奠定基础的事情，而现在加入Compass是有机会能从头开始参与一些系统的设计和研发，影响力很不一样。</p>
+<ul>
+<li>Compass VS Wework</li>
+</ul>
+<p>我另外也表达了我对Compass可能重蹈Wework覆辙的担忧，两者同处于地产行业，都接受了愿景基金的投资，又都有IPO的计划，有如此多的相像之处。他解释道这是两个不同商业模式的公司，Wework是重资产型公司，如果没有人接手，那么所有滞留房屋的租金就是极高的成本；而Compass只是一个平台，成本无非就是工资以及网站维护费用，完全不是一个数量级的。同时Wework之前以极度烧钱的方式来获得高速增长，每个季度都亏损极大；Compass虽然也在增长，但是基本实现了收支平衡，现金流上没有很大的压力，而且今年的营业额也已经提前几个月达到了预期计划。</p>
+<ul>
+<li>地产行业的前景</li>
+</ul>
+<p>按照美国经济运行的规律，大家都觉得下一轮经济危机很快就要来临，而一旦发生地产行业肯定受冲击最大。我也就问了关于今年房价下跌对Compass是否有影响。他回答如果发生经济危机，影响肯定有，但是几乎所有行业都会受影响，根据上一次经济危机情形来看，房市往往是比股市恢复更快的。另外关于公司的增长要从两个方面看，如果整个行业发展，那么保持市场份额不变公司也在增长；而如果行业增长放缓甚至停滞，那么如果能蚕食掉老牌公司的份额也是一种增长，而看数据确实市场份额增长惊人。</p>
+<p>当然这只是一家之言，不过能提供这样一些看待问题的角度我觉得也是受益匪浅，尤其是从公司运营甚至商业的角度。毕竟技术只是一种工具。</p>
+<h3><span id="amazon">Amazon</span></h3>
+<p>在此感谢一下亚马逊的华人recruiter，如果没有她我也没法及时拿到OA以及Onsite。他们家的Onsite算是时间最长的，总共六轮（一轮午餐）六个小时，从早上八点一直面到下午两点，面到后面答LP的时候脑子都已经快不转了，还好例子都大致准备到了。这也是面过公司里要求时间最早的，早上7：45就要check in，真的是“充分利用”面试官和面试者的时间了。</p>
+<p>因为我面的岗位是Front End Engineer，所以考察的内容大致与前端或者全栈有关系，算法部分倒不是很难。不过亚马逊面试的特点就是Behavior question 特别多且详细，主要围绕它自身的14条军规展开: <a href="https://www.amazon.jobs/en/principles" target="_blank" rel="external">https://www.amazon.jobs/en/principles</a> 。</p>
+<h4><span id="关于-leadership-principles">关于 Leadership Principles</span></h4>
+<p>可以说如果准备过亚马逊的LP，基本所有公司的文化行为面试都是可以轻松应付了，从这点上来说还是很值得深入研究一番。</p>
+<p>其实每个公司都有独特的文化，甚至一些明文标准来支撑它自身的运行和发展。然而亚马逊确实是少见的把这些准则看得如此重的，我甚至听说很多时候开会意见不合大家就开始抛LP来吵架，什么“你们要有Think big”，“我们要Insist on the highest standards”，虽然外人听来有点滑稽，但如果所有员工都能朝这个方向努力，确实是能产生巨大影响力的。有时候也确实十分佩服亚马逊在人员如此之多、岗位流动性如此之大的情况下还能保持系统的稳定和高速增长，可能LP起了很大的作用。</p>
+<p>我面试中也是能体会到几乎人人都会把LP挂在嘴边。比如我其中一轮问道前后端的职责分工是怎么样的，面试官回答在亚马逊大家讲究“Owenership”，所以通常做一个项目前后端都要负责。</p>
+<p>其实如果抛开面试来讲，LP的很多理念是可以指导工作的，即使你不在亚麻，它也能让你成为更好地工程师。</p>
+<h4><span id="一轮没面好并不影响拿offer">一轮没面好并不影响拿offer</span></h4>
+<p>因为我的时间安排的很紧，面试官时间的协调不是很容易，直到面试前一天才拿到面试官名单。第二天依然是有变动，本来全部是现场面试的，但是有一轮被临时调整成了视频远程面试。</p>
+<p>这一轮的题比较难，不是常规的算法题，主要关于JS异步回调设计。我一开始完全没有什么思路，但是又不能停在哪里，所以我一般写辅助函数名一边说出我所有的思路和想法，期待面试官可以给一点提示。我问面试官，“Am I on the right track?”。面试官面无表情，回了一句，“Continue.”。我整个人都快崩溃了，最后硬着头皮写了一些思路，但是我自己内心知道这样明显是不对的。</p>
+<p>最后感觉就是这一轮和面试官的交流特别不顺畅，结束后十分沮丧。我发现我是那种面试中更喜欢去和面试官眼神交流，寻求面试官反馈的，如果全程对面十分冷淡，将会极大影响我自己的心态和节奏。</p>
+<p>这当然和我自己的心态不够强大有关，但是面试官的冷淡让我十分不爽，中途感觉他还在处理别的事务，中间问了两个问题对面都没有反应，反正我回来就向HR举报了。</p>
+<p>最后结果证明有一轮没有面好并不完全说明Offer无望了，但确实在定level的时候会受一定的影响。每一轮结束的时候只能是及时调整心态，不要影响后续的发挥。</p>
+<h3><span id="wayfair">Wayfair</span></h3>
+<p>面完亚麻在西雅图待了一个周末放松了一下，飞往波士顿面最后一家。其实到这个时候我已经大概知道前面面的三家至少会有两家会给offer了，所以心态已经相当地放松。</p>
+<p>Wayfair是美国最大的在线家具电商之一，地点在波士顿市中心一个mall里面，其中有七层都是他们的。他们给面试还是挺痛快的，基本在Karat面试完过了就直接约Onsite。</p>
+<p>Wayfair给我提前发的面试官名单还是有点令我意外，基本全是Senior级别的，要么是Senior Director，要么是Senior manager/director。我到了现场之后才发现原来他们是把我作为senior面的。一共也是六轮，一轮系统设计，一轮白板代码，一轮codepen直接跑js，一轮UI组件设计，一轮午餐纯聊，一轮behavior。非常的全面，但是总体来说难度不是特别大。</p>
+<p>系统设计那轮给我的反馈是最好的，基本面完我就知道稳了。出的题目正好是我准备过的，所以答的非常流畅，在这里感谢某章。我给出的几种思路都几乎是某章讲解的最优解，面试官甚至表示其中一两个是第一次见到，让我详细解释一番后能感觉整个表情都舒展了。最后Wayfair给我的level也是定到了Senior，个人觉得这一轮至关重要。</p>
+<p>最后面完直接驱车奔往机场，赶晚上的飞机回费城。在车上时候长长舒了一口气，终于结束了。</p>
+<h2><span id="面试准备">面试准备</span></h2>
+<p>其实这一部分如果有时间我希望能单独拿出来做一次总结。以下只是一些简要的描述。</p>
+<p>因为我主要还是以前端（Front end）为主，全栈（Full Stack）主要围绕系统设计做了些准备。</p>
+<h3><span id="算法与数据结构">算法与数据结构</span></h3>
+<p>这部分准备好不一定是充分条件，但几乎是必要条件，至少东西部的大公司是这样。不管你是做什么方向的，前端后端，移动端也好，首先你是一个软件工程师，所以他们肯定会考察你的代码基本功。</p>
+<p>个人觉得不必纠结于用什么语言，挑一个自己习惯的就好。出于面试省时间的考虑，基本上我在面试以及准备过程中，能用Python写的都选择了它，前端的题则都是用JavaScript写。用Python确实节约了我很多在白板上的空间和时间，个人也总结了一些Python刷题的小技巧，有兴趣可以移步: <a href="https://hzhao.me/2019/08/16/python-leetcode-trick/">一些刷题常用的 python 技巧</a>。我在做的过程中也给自己做了记录和总结，所有的Leetcode练习代码都放在了Github上：<a href="https://github.com/HanchengZhao/Leetcode-exercise" target="_blank" rel="external">https://github.com/HanchengZhao/Leetcode-exercise</a></p>
+<p>我个人的习惯是每次按题型来，比如这周专门写树和图的，下周专门做动态规划的，这样做多了容易总结出规律，在这个过程中用到的资料主要有：</p>
+<ul>
+<li><a href="https://www.academia.edu/38223757/Cracking_the_Coding_Interview_6th_Edition_189_Programming_Questions_and_Solutions" target="_blank" rel="external">Cracking the coding interview </a>，主要做参考和入门用。</li>
+<li>极客时间的一门实战课，一门理论课。实战课是视频讲解的，侧重面试技巧；理论课是侧重基础和原理讲解，对一题多解很有帮助。</li>
+<li>Leetcode + Discussion. 我建议每次即使做出了题目也要去Discussion里看一看别人的解法，很多边界处理或者递归的写法很受启发。</li>
+</ul>
+<h3><span id="系统设计">系统设计</span></h3>
+<p>系统设计我其实不太有发言权，自身准备得也没有那么充分。很多公司对Junior岗位其实期待不会很高，但是如果面得好对定级别相当重要。这部分相对于算法更难准备，因为非常灵活，很看实战经验，但是套路也是可以总结出来的。比如Consistent hashing基本是scalability必考，涉及地理信息的系统比如Uber, yelp必考Geo hash的实现原理等等。</p>
+<p>另外就是一定要一步一步来，不同的量级分析测量很不一样，比如如果就几千个用户你非要盲目加cache、加load balancer是一件非常不讨巧的事。</p>
+<p>个人主要学习的一个是九章的课，其它就是</p>
+<ul>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank" rel="external">Grokking the System Design Interview</a></li>
+<li><a href="https://github.com/sjtuhjh/appdocs/blob/master/BooksAndPapers/GeneralPapers/Designing%20Data-Intensive%20Applications.pdf" target="_blank" rel="external">Designing Data-Intensive Applications</a></li>
+<li><a href="https://www.hiredintech.com/classrooms/system-design/lesson/59#" target="_blank" rel="external">HiredInTech</a></li>
+</ul>
+<h3><span id="前端">前端</span></h3>
+<p>前端的面试在我看来是最难整理和准备的，因为它非常地杂，不同公司考法很不一样。有的会考很JS的细节，有的会考具体的功能实现，而有的侧重点又在HTML和CSS上面。个人遇到过的(包括在TripleByte和Pramp上)有</p>
+<ul>
+<li>实现一个tic-tac-toe</li>
+<li>实现Event emitter</li>
+<li>实现一个异步的Shopping cart类</li>
+<li>实现一个计算器</li>
+<li>实现一个Debounce函数</li>
+<li>实现一个To do list</li>
+<li>实现一个简易版Trello</li>
+<li>解释一下JS的某个特性（this, prototype, closure, scope…)</li>
+</ul>
+<p>大部分都是要求Vanilla JS，所以对于工作中大量依赖框架的开发是有一定挑战性的。但总体来说还是孰能生巧，里面有很多的共通性。</p>
+<p>国内可能Vue占据了大半江山，但是美国React还是主流，前端面试中也会充斥很多React技术讨论的地方，比如为什么选React;好处是什么; Redux vs Mobx; 为什么要hooks之类。这里十分推荐Redux作者 Dan Abramov的个人博客：<a href="https://overreacted.io/" target="_blank" rel="external">https://overreacted.io/</a><br>
+他是那种能把很多问题细化整理，讲得非常明白的人，真正做到了他所说的“explain with words and code.”</p>
+<p>另外就是一些前端工程化可视化相关的问题，这些都比较特殊，只能是按个人经历准备，但是这里工具的选择并不重要，选择的权衡过程才重要，如果能把这个权衡的逻辑和思考讲清楚，是很加分的。</p>
+<h2><span id="题外话">题外话</span></h2>
+<h3><span id="造长城">“造长城”</span></h3>
+<p>这次到西雅图有幸和几个亚马逊的朋友聊天，感觉每个人对于亚马逊的想法挺不一样的，感情也很复杂。有人会觉得这种高压和死抠的文化让人很难适应，即使报酬很高工作起来也没有很开心；而有人却觉得这种环境会促使着你去成长去学习，而且大公司做的方向很多，内部转组找到自己喜欢做的东西非常方便。</p>
+<p>我之前在网上看到一个从亚麻离职的员工形容在亚麻工作就像“造长城”。毋庸置疑，亚马逊是一家伟大的企业，就像在造一个长城一样，它对社会所创造的价值是巨大的，但是参与建造的过程不一定都是有趣的，往往压力巨大，困难重重。而且，你基本想不起来建造长城的任何一个工人的名字，可能第一个想起来的居然是孟姜女，还不是长城的建造者。在亚麻疯狂扩招的今天，你要进入亚麻之前可能真的要想清楚自己适不适合这种文化。</p>
+<p>当然，这只是一种观点，我还是很敬佩亚麻得员工的，尤其佩服它在人员流动这么快速的状态下还能保持系统的稳定和高速运行，整个制度和框架肯定起到了很大的作用。据说亚麻程序员几万人，senior及以上的员工也才800+，真的个个都是中流砥柱了。另外我听到一种说法是亚麻员工跳槽都非常受其它公司的欢迎，而几家养老公司出来的可能就要接受各样的质疑。</p>
+<h3><span id="你刷的每一道题都会有所回报">“你刷的每一道题都会有所回报”</span></h3>
+<p>我之前和一起mock的朋友开玩笑说，我们要像一题一千刀那样去刷题。因为Faang级别的公司一般电面都会出一到两题，过了就会包机票包酒店包餐饮请你去他们公司面试，这一两题就基本值这个价了。</p>
+<p>这当然只是个段子，一家公司真正面试就算电面+现场加起来最多也不过10题，但是你往往要刷几百甚至上千题来保证你能流畅地做出那几题。很多题你刷过了没有考不代表就没有作用，它让你更从容、更有底气去面对那些陌生的题目，毕竟面试中气场和心态非常关键。</p>
+<h3><span id="面试心态">“面试心态”</span></h3>
+<p>讲到心态，我觉得面试的时候一定要将面试官当成平时工作的同事来对待，假设对方目前不知道这题的解法，你要一步一步推演给TA，而不是一场考试。</p>
+<p>而关于如何调整好心态，我觉得无他，唯手熟耳。所有的信心都来自平时的训练和反馈，你不能指望平时没刷过题的人面试时候能有强大的内心调整好状态。</p>
+<h3><span id="挂了其实不是坏事">“挂了其实不是坏事”</span></h3>
+<p>我个人感觉是一般面试完就知道会不会拿offer，对方适不适合自己了。所以很多时候挂了并不是一件坏事，只能说目前双方还不适合。面试者往往是你将来要每天共事得伙伴，如果他们面试的时候处处刁难你，那即使大发慈悲给了你Offer, 你将来每天也会过的很难受。这样不如一开始就不要选择强行“撮合”。</p>
+<p>另外就是一定要接受批评。很多时候是需要一些在一旁指出你不足和缺点的朋友的。我在投简历初期想让一个朋友内推，被狠批了一顿，开始恍然大悟全部重新排版改写，然后才有了后来很多的面试机会。</p>
+<p>以上就是今年的面试经历，真的要感谢很多无私帮忙内推的朋友（特别致谢某烨同学一共帮我内推了三四次），见识了很多，学习了很多，但是这个过程并不想再来一遍了，真的是累。。。</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/08/16/python-leetcode-trick/" data-toggle="tooltip" data-placement="top" title="一些刷题常用的 python 技巧">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">TL;DR</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">前情提要</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">市场并不好，但机会还是要争取</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Most things are negotiable</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">面试经过</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">Adobe</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.1.1.</span> <span class="toc-nav-text">一共10轮面试，Onsite 6轮+视频4轮</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">Compass</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">Amazon</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.3.1.</span> <span class="toc-nav-text">关于 Leadership Principles</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.3.2.</span> <span class="toc-nav-text">一轮没面好并不影响拿offer</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">Wayfair</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">面试准备</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">算法与数据结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">系统设计</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">前端</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">题外话</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">“造长城”</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">“你刷的每一道题都会有所回报”</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">“面试心态”</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.4.</span> <span class="toc-nav-text">“挂了其实不是坏事”</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#python" title="python">python</a>
+                        
+                          <a class="tag" href="/tags/#interview" title="interview">interview</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.yewang.host" target="_blank">Ye Wang Blog</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "henryzhao";
+    var disqus_identifier = "http://hzhao.me/2019/11/20/一周23轮onsite记录/";
+    var disqus_url = "http://hzhao.me/2019/11/20/一周23轮onsite记录/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/hanchengzhao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/HanchengZhao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Henry Zhao 2021 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    modified by <a href="http://hzhao.me">Henry Zhao</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://hzhao.me/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-72269431-2';
+    var _gaDomain = 'hzhao.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<!-- <a id="rocket" href="#top" class=""></a> -->
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://hzhao.me/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

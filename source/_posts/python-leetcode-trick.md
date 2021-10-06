@@ -340,6 +340,8 @@ char 则是反向操作：
 
 有时候初始化我们需要设定 `Math.max()` 和 `Math.min()`, 在 python 中分别以 `float('inf')` 和 `float('-inf')`表示
 
+或者也可以用math库里的 `math.inf` 和 `math.inf`
+
 在 python2 中我们也可以这么做：
 
 ```

@@ -60,7 +60,7 @@ ga_domain: hzhao.me
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "Experience is what you get when you don't get what you want."
+sidebar-about-description: "A Day dreamer and a night procrastinator (thinker)"
 sidebar-avatar: img/self.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags
