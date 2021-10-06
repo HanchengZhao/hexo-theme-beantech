@@ -64,7 +64,7 @@ ListenNotes也逐渐加入了一些社交属性，比如某人可以把自己喜
 
 很多人会觉得Planet Money的内容比较浅显，不够深入，但这本来也就是他们的初衷，用最浅显的语言去解释一些经济现象。同时我也不觉得Podcast是一个深入内容最好的媒介，它更多的是一个引子，给予启发。真正地深入研究都应该是线下的活。
 
-### [How I Built This with Guy Raz](https://www.npr.org/podcasts/510313/how-i-built-this)
+### How I Built This with Guy Raz
 <img src="./npr_hibt_podcasttile_wide-7e7eef6531e23ebb99cd154863c8146d0c061245.jpeg" style="max-width: 50%" alt="Freakonomics" />
 这是NPR相对比较新的一档节目，2016年才开始做，每集在一到一个半小时，每次会采访一个公司的创立者，聊聊背后的创业故事，基本涵盖了各行各业最有名的一些公司包括Instagram、Airbnb、Lyft、Patagonia、Wholefoods等等。
 
@@ -72,7 +72,7 @@ ListenNotes也逐渐加入了一些社交属性，比如某人可以把自己喜
 
 那天突然听到我司的创始人也登上了[7月26日的一期](https://www.npr.org/2021/07/23/1019734077/robert-reffkin-compass)episode，听他在节目聊自己的经历果然在面对底下员工时表现得很不一样，比如他讲了真正创业的初衷，以及中间过程差点被股东踢出局的过程，作为自家打工人来听也算是一种非常神奇的体验。
 
-### [Freakonomics Radio](https://freakonomics.com/)
+### Freakonomics Radio
 <img src="./freak.jpeg" style="max-width: 50%" alt="Freakonomics" />
 
 这个节目是《怪诞经济学》的作者之一 Stephen J. Dubner 创立并主持的。怪诞经济学的理念也是去探讨我们习以为常的现象，但是从经济学家的角度去思考背后的原因。比如[最近的一期](https://freakonomics.com/podcast/child-poverty/)在讨论为什么美国作为最富有的国家之一却有那么多陷入贫困的孩子；以及最近因为疫情的关系也在讨论居家办公是否会成为常态，疫情总会过去，但是什么会被永久改变。
@@ -122,7 +122,7 @@ Teahour 算是我最喜欢的中文科技类的podcast，按他们的描述是�
 
 ## 闲聊类
 
-### [随机波动StochasticVolatility](https://www.stovol.club/)
+### 随机波动StochasticVolatility
 
 <img src="./cover_medium.jpeg" style="max-width`: 50%" alt="随机波动StochasticVolatility" />
 按她们的自述，这是一个由三位女性媒体人发起的一档泛文化类播客。她们是社会学与媒体人的背景，又都是女性，经常能提供一种普通人，尤其男性视角不太会去注意到的人文关怀的点，很有启发性。比如这一期聊
@@ -131,7 +131,7 @@ Teahour 算是我最喜欢的中文科技类的podcast，按他们的描述是�
 
 前不久因为美国从阿富汗撤军以及911事件20周年，她们和周轶君聊世界与新闻的变迁，也同样是新闻与媒体的形式改变上聊了人与这个世界相处方式的改变，令我印象非常深刻。
 
-### [牛油果烤面包](https://avocadotoast.live/)
+### 牛油果烤面包
 
 <img src="./feed.jpeg" style="max-width`: 50%" alt="avacadotoast" />
 
@@ -145,7 +145,7 @@ Teahour 算是我最喜欢的中文科技类的podcast，按他们的描述是�
 
 他们聊天的氛围也非常的轻松，内容非常有趣。
 
-### [津津乐道](https://dao.fm/)
+### 津津乐道
 
 <img src="./icon.png" style="max-width`: 50%" alt="dao" />
 

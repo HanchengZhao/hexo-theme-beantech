@@ -79,13 +79,6 @@
     </url>
 
     <url>
-        <loc>http://hzhao.me/tags/React-js/</loc>
-        <lastmod>2021-06-06T19:19:50.732Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://hzhao.me/tags/CockroachDB/</loc>
         <lastmod>2021-06-06T19:19:50.732Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -108,6 +101,13 @@
 
     <url>
         <loc>http://hzhao.me/tags/Docker/</loc>
+        <lastmod>2021-06-06T19:19:50.732Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/React-js/</loc>
         <lastmod>2021-06-06T19:19:50.732Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -137,6 +137,13 @@
     <url>
         <loc>http://hzhao.me/tags/interview/</loc>
         <lastmod>2021-10-06T05:57:14.530Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/podcast/</loc>
+        <lastmod>2021-10-06T06:13:07.288Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
