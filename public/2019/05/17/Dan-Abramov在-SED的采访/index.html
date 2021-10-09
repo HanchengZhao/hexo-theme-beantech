@@ -21,12 +21,12 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js"
   ></script>
   <title>
-     Deploy a react app in kubernetes - Henry Zhao 
+     Dan Abramov在 SED的采访 - Henry Zhao 
   </title>
 
   <link
     rel="canonical"
-    href="http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/"
+    href="http://hzhao.me/2019/05/17/Dan-Abramov在-SED的采访/"
   />
 
   <!-- Bootstrap Core CSS -->
@@ -78,7 +78,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('tree.jpg')
+            background-image: url('https://miro.medium.com/max/2000/1*HSisLuifMO6KbLfPOKtLow.jpeg')
             /*post*/
         
     }
@@ -95,20 +95,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Cloud" title="Cloud">Cloud</a>
+                              <a class="tag" href="/tags/#React" title="React">React</a>
                             
-                              <a class="tag" href="/tags/#React.js" title="React.js">React.js</a>
+                              <a class="tag" href="/tags/#podcast" title="podcast">podcast</a>
                             
-                              <a class="tag" href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-                            
-                              <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                              <a class="tag" href="/tags/#Software Engineering Daily" title="Software Engineering Daily">Software Engineering Daily</a>
                             
                         </div>
-                        <h1>Deploy a react app in kubernetes</h1>
+                        <h1>Dan Abramov在 SED的采访</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Henry Zhao on
-                            2018-01-13
+                            2019-05-17
                         </span>
                     </div>
                 
@@ -225,48 +223,21 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="task-deploy-a-react-app-in-kubernetes">Task: Deploy a react app in kubernetes</h2>
-<blockquote>
-<p>make sure cli tools such as node, docker, kubectl are installed</p>
-</blockquote>
-<h2 id="steps">Steps:</h2>
-<ol>
-<li>Use <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external">create-react-app</a> tool to generate a new project
-<ul>
-<li><code>create-react-app new-app</code></li>
-<li><code>cd new-app</code></li>
-</ul>
-</li>
-<li>Configure a <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="external">Dockerfile</a> for the react app
-<ul>
-<li>
-<p>use <a href="https://github.com/mhart/alpine-node" target="_blank" rel="external">alpine-node</a> as base docker image(Minimal Node.js Docker Images)</p>
-  <figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"><span class="comment"># create a production build</span></span><br><span class="line"><span class="keyword">FROM</span> mhart/alpine-node AS build</span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></span><br><span class="line"><span class="bash">COPY . .</span></span><br><span class="line"><span class="bash">RUN npm run build</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment">#serve the built app</span></span></span><br><span class="line"><span class="bash">FROM mhart/alpine-node</span></span><br><span class="line"><span class="bash">RUN npm install -g serve</span></span><br><span class="line"><span class="bash">WORKDIR /app</span></span><br><span class="line"><span class="bash">COPY --from=build /app/build .</span></span><br><span class="line"><span class="bash">CMD [ <span class="string">"serve"</span>, <span class="string">"-p 80"</span>, <span class="string">"-s"</span>, <span class="string">"."</span>]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>build the image: <code>docker build -t $repo-name .</code></p>
-</li>
-<li>
-<p>run it with <code>docker run -p 8080:80 $repo-name</code>, go to <code>localhost:8080</code></p>
-</li>
-</ul>
-</li>
-<li>Deploy your app to kubenetes cluster
-<ul>
-<li>push your local image to a remote repo: <code>$ docker push $DOCKER_ID_USER/repo:tag</code> to docker hub</li>
-<li>create a new deployment: <code>kubectl run $deployment-name --image=$image-location --port=80</code></li>
-<li>expose your service through NodePort: <code>kubectl expose deployment/$deployment-name --type=&quot;NodePort&quot; --port 80</code></li>
-<li>get the node $name: <code>kubectl get node</code></li>
-<li>get the service external $port: <code>kubectl describe services/$service-name</code></li>
-<li>check the app out in the brower: <code>$nodename:$port</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://hackernoon.com/running-react-app-inside-a-docker-container-27136a75916b" target="_blank" rel="external">Running React app inside a Docker container</a></li>
-<li><a href="http://connect.cd/2017/11/building-and-deploying-a-containerised-react-app-and-microservice-using-the-same-openapi-contract/" target="_blank" rel="external">Building and Deploying a Containerised React App and Microservice Using the Same OpenAPI Contract</a></li>
-</ul>
+                <p><img src="https://miro.medium.com/max/3150/1*xxVEfOOAmIKHWOUloRKLhw.jpeg" alt="dan"></p>
+<p>Facebook 访谈系列终于请到 Dan Abramov, 我记得上次听到他上 Software Engineering Daily的时候还是以 Redux作者的身份，貌似那时还只是 React社区的活跃成员，结尾聊到说可能下一步计划是加入一家大公司吧，果然没多久就去了 Facebook。</p>
+<p>那时对他的印象就是非常的谦逊，而且解释起很多问题非常的详尽明白，这也能从他后来的个人博客 Overreacted.io风格看的出来。同时让我极度佩服的一点是，不管别人在 github issue上怎么样尖酸刻薄地评论和揶揄，他都能很心平气和地解释，这和很多技术大牛的盛气凌人形成鲜明反差。当然他在podcast里也提到了其实这在初期对他自己的生活产生了很大困扰，因为那时候老是想在社交平台上去和人argue，导致睡眠都不好，于是后来晚上强迫自己不用社交软件, 不带公司电脑回家。另外他聊到他今年也不像年轻时候那样冲动，毕竟都 26 了。。（我一直以为他 30 多了，果然大牛都是年少成名）。以下是他聊到几个我觉得比较有意思点，摘录了一下。</p>
+<h3 id="是何契机开始用-react">是何契机开始用 React?</h3>
+<p>Dan当时是在一家 Startup 工作，当时本来是要开发一个 iPad 应用，但是后来准备开发 Web 版本，然后需要写一个复杂的单页应用。他试了像 Backbone 这样的框架都发现限制很大，在同事的推荐下用 React 写了一个 like button 然后感觉越用越顺手，开始用 React 重写整个应用。当时他感觉 React 给他带来的工作效率之高使得他可以边重写边发布新功能，这差不多是 2014 年的事。那时候社区工具很不完善，像React-router这样的库都还没有，所以他自己为了解决自己的问题创建了好多库，而正好 React 生态也慢慢开始活跃，他也就受到了很多关注。之后他在 15 年就选择加入了 Facebook。</p>
+<h3 id="react的发展也是个-dogfooding-的过程">React的发展也是个 dogfooding 的过程</h3>
+<p>人们想到 Facebook 可能最先想到 Newsfeed, 但是当初 Jordan 创造 React 时候是因为要做 Ads, 因为整个前端极其复杂，里面有相当多的表单串联，验证，预览，下拉菜单以及地图。当时 React 被创造出来就是为了解决这些问题，然后才慢慢地被 UI 的其它部分所采用。现在 Facebook 内部如果包括 React Native有大概十万个 React 组件，所以如果他们要做 API 的改动，最先影响的肯定是他们自己，这也是为什么 React 长期保持相对稳定的原因。（也许这也是为什么这么多人喜欢用有大厂背书的库的原因，然而大厂背书也不一定稳定啊，google就是很好的例子）</p>
+<h3 id="sebastian-markbåge的迷弟">Sebastian Markbåge的迷弟</h3>
+<p>Dan 提到了两个人，算是 React 的 Visionary，早期是 Jordan，现在就是 Sebastian （记得他在demo React hooks 的时候也说自己只是个 Demo guy，一切的想法都是Sebastian提出来的）。听完podcast的感觉就是 Dan 是Sebastian的超级迷弟。比如主持人问Dan什么时候选择尊重前人的经验，什么时候又要抛弃所谓的&quot;best practices&quot;，他说 “I try to listen to what Sebastian says.” 他提到Sebastian一直都会想更长远以及更底层的问题，比如看到社区里的一些解决方案后会思考，“为什么是这么做的？为什么要这样去解决这个问题？为什么这会是一个问题？”，同时他会把自己关于对计算机底层和浏览器的工作原理的理解结合起来，从一个更高的层面去想问题。像 React 16对于底层的重写和hooks API的诞生都是这样。</p>
+<h3 id="大公司里的开源项目">大公司里的开源项目</h3>
+<p>Dan 这里同时提到了 Flow 和 React Native 两个项目。大公司的开源项目往往侧重点会不一样，比如他们会把解决内部的问题放在第一位。像 Flow，很多人会觉得他们没有倾听社区的反馈，但实际上并不是他们不关心，而是 FB 内部使用 Flow 的规模在疯狂增长，远超出其性能改进所能应对的程度。所以他们只能花大量的时间先将 Flow scale到 FB 代码库规模的程度。（当然侧面也说明了 Flow 性能确实不行，被 TS 取代也是很正常的Image）。而 React Native 是因为它的surface area比 React 要多很多，而且和内部测试基建结合得相当紧密，即使过了 CI 也有可能break内部产品，所以也就没法像 React那样做到github优先发布的流程。</p>
+<h3 id="where-do-you-see-react-in-five-years">Where do you see React in five years?</h3>
+<p>（好熟悉的behavior question). 首先 Dan 觉得很难讲，因为很多点子都是之前没法预见的，比如hooks API,其实就是Sebastian几个月前突然想到的。不过他提到几个方向应该会涉及，一个就是 Data fetching, 目前 React 库自身并不提供任何功能。很多人会把 React 看成一个 view library, 但是如果将它看成是一个 User interface library, 那么中间等待的过程，以及如何将它展现给用户其实都是和 UI 相关的。很多之前谈过的feature比如suspense，time slicing 都会成为react 稳定api的一部分。另外关于手势操作，动画处理，抽象出为所有设备提供 UI 的共通层都会是未来考虑的一部分。</p>
+<h3 id="听完想法">听完想法</h3>
+<p>使用一个工具和创造一个工具看待问题的视角是很不一样的，这也是了解底层实现原理的重要性所在。好像目前很多工具的诞生都是某些程序员为了解决自己的一些痛点，然后发现这也是大家的痛点从而被推广开的。尤雨溪之前谈到 Vue 诞生也是为了满足他自己快速迭代开发的需求而诞生的。Dan 这集里其实讲到的细节并不多，更多是high level的讲，具体的东西写在了他的博客里，值得到时候逐片做个摘要。另外发现像这样能洋洋洒洒地给别人讲明白一个东西也是一种能力，不然为什么 Dan 是 React 的门面担当而不是Sebastian。</p>
 
                 
 
@@ -275,12 +246,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2018/03/08/react-global-state-management/" data-toggle="tooltip" data-placement="top" title="React global state management">&larr; Previous Post</a>
+                            <a href="/2019/08/16/python-leetcode-trick/" data-toggle="tooltip" data-placement="top" title="一些刷题常用的 python 技巧">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2017/12/25/一次关于networking的对话/" data-toggle="tooltip" data-placement="top" title="一次关于networking的对话">Next Post &rarr;</a>
+                            <a href="/2019/04/03/Automatically-create-merge-request-through-gitlab-api/" data-toggle="tooltip" data-placement="top" title="Automatically create merge requests through gitlab api">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -310,7 +281,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#task-deploy-a-react-app-in-kubernetes"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Task: Deploy a react app in kubernetes</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#steps"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Steps:</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#references"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">References</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#是何契机开始用-react"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">是何契机开始用 React?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#react的发展也是个-dogfooding-的过程"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">React的发展也是个 dogfooding 的过程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sebastian-markbåge的迷弟"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Sebastian Markbåge的迷弟</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#大公司里的开源项目"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">大公司里的开源项目</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#where-do-you-see-react-in-five-years"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Where do you see React in five years?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#听完想法"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">听完想法</span></a></li></ol>
         
         </div>
       </aside>
@@ -330,13 +301,11 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Cloud" title="Cloud">Cloud</a>
+                          <a class="tag" href="/tags/#React" title="React">React</a>
                         
-                          <a class="tag" href="/tags/#React.js" title="React.js">React.js</a>
+                          <a class="tag" href="/tags/#podcast" title="podcast">podcast</a>
                         
-                          <a class="tag" href="/tags/#Kubernetes" title="Kubernetes">Kubernetes</a>
-                        
-                          <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                          <a class="tag" href="/tags/#Software Engineering Daily" title="Software Engineering Daily">Software Engineering Daily</a>
                         
                     </div>
                 </section>
@@ -365,8 +334,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "henryzhao";
-    var disqus_identifier = "http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/";
-    var disqus_url = "http://hzhao.me/2018/01/13/deploy-a-react-app-in-kubernetes/";
+    var disqus_identifier = "http://hzhao.me/2019/05/17/Dan-Abramov在-SED的采访/";
+    var disqus_url = "http://hzhao.me/2019/05/17/Dan-Abramov在-SED的采访/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

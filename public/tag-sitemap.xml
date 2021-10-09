@@ -16,13 +16,6 @@
     </url>
 
     <url>
-        <loc>http://hzhao.me/tags/React/</loc>
-        <lastmod>2018-03-09T05:09:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://hzhao.me/tags/Redux/</loc>
         <lastmod>2018-03-09T05:09:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,6 +72,13 @@
     </url>
 
     <url>
+        <loc>http://hzhao.me/tags/React-js/</loc>
+        <lastmod>2021-06-06T19:19:50.732Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://hzhao.me/tags/CockroachDB/</loc>
         <lastmod>2021-06-06T19:19:50.732Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -107,8 +107,8 @@
     </url>
 
     <url>
-        <loc>http://hzhao.me/tags/React-js/</loc>
-        <lastmod>2021-06-06T19:19:50.732Z</lastmod>
+        <loc>http://hzhao.me/tags/python/</loc>
+        <lastmod>2021-06-06T21:27:43.448Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -128,22 +128,22 @@
     </url>
 
     <url>
-        <loc>http://hzhao.me/tags/python/</loc>
-        <lastmod>2021-10-06T05:57:14.530Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://hzhao.me/tags/interview/</loc>
-        <lastmod>2021-10-06T05:57:14.530Z</lastmod>
+        <loc>http://hzhao.me/tags/React/</loc>
+        <lastmod>2021-10-09T23:35:00.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hzhao.me/tags/podcast/</loc>
-        <lastmod>2021-10-06T06:21:39.027Z</lastmod>
+        <lastmod>2021-10-09T23:35:00.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hzhao.me/tags/Software-Engineering-Daily/</loc>
+        <lastmod>2021-10-09T23:35:00.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
