@@ -1,0 +1,336 @@
+/* ============================================================
+   Dark Mode Styles — activated when <html class="dark-mode">
+   Overrides hardcoded colors from beantech.min.css & hux-blog.min.css
+   ============================================================ */
+
+/* ---- base colors ---- */
+.dark-mode {
+  color-scheme: dark;
+}
+
+.dark-mode body {
+  color: #e0e0e0;
+  background: #1a1a1a;
+}
+
+.dark-mode a {
+  color: #e0e0e0;
+}
+.dark-mode a:hover,
+.dark-mode a:focus {
+  color: #2ea8c7;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #e6e6e6;
+}
+
+.dark-mode p {
+  color: #e0e0e0;
+}
+
+.dark-mode blockquote {
+  color: #999;
+  border-left-color: #555;
+}
+
+.dark-mode hr {
+  border-color: #333;
+}
+
+.dark-mode hr.small {
+  border-color: #555;
+}
+
+/* ---- selection ---- */
+.dark-mode ::-moz-selection {
+  color: #fff;
+  background: #2ea8c7;
+}
+.dark-mode ::selection {
+  color: #fff;
+  background: #2ea8c7;
+}
+
+/* ---- code & pre ---- */
+.dark-mode code {
+  background: #2a2a2a;
+  color: #e0a060;
+}
+
+.dark-mode pre {
+  background: #1e1e1e;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+.dark-mode pre code {
+  background: transparent;
+  color: #e0e0e0;
+}
+
+.dark-mode .table th,
+.dark-mode .table td {
+  border-color: #333 !important;
+}
+
+/* ---- navbar (transparent at top, fixed on scroll) ---- */
+.dark-mode .navbar-custom.is-fixed {
+  background-color: rgba(26, 26, 26, 0.95);
+  border-bottom-color: #333;
+}
+
+.dark-mode .navbar-custom.is-fixed .navbar-brand {
+  color: #e0e0e0;
+}
+.dark-mode .navbar-custom.is-fixed .navbar-brand:hover,
+.dark-mode .navbar-custom.is-fixed .navbar-brand:focus {
+  color: #2ea8c7;
+}
+
+.dark-mode .navbar-custom.is-fixed .nav li a {
+  color: #e0e0e0;
+}
+.dark-mode .navbar-custom.is-fixed .nav li a:hover,
+.dark-mode .navbar-custom.is-fixed .nav li a:focus {
+  color: #2ea8c7;
+}
+
+/* mobile navbar collapse */
+@media only screen and (max-width: 767px) {
+  .dark-mode .navbar-default .navbar-collapse {
+    background: #1e1e1e;
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ---- post previews ---- */
+.dark-mode .post-preview > a {
+  color: #e0e0e0;
+}
+.dark-mode .post-preview > a:hover,
+.dark-mode .post-preview > a:focus {
+  color: #2ea8c7;
+}
+
+.dark-mode .post-preview > .post-meta {
+  color: #999;
+}
+.dark-mode .post-preview > .post-meta > a {
+  color: #e0e0e0;
+}
+.dark-mode .post-preview > .post-meta > a:hover,
+.dark-mode .post-preview > .post-meta > a:focus {
+  color: #2ea8c7;
+}
+
+.dark-mode .post-content-preview {
+  color: #888;
+}
+.dark-mode .post-content-preview:hover {
+  color: #2ea8c7;
+}
+
+/* ---- post container ---- */
+.dark-mode .post-container a {
+  color: #5fa8d3;
+}
+.dark-mode .post-container a:hover,
+.dark-mode .post-container a:focus {
+  color: #2ea8c7;
+}
+
+.dark-mode .post-container h5,
+.dark-mode .post-container h6 {
+  color: #aaa;
+}
+
+.dark-mode .post-container .tags a {
+  color: #999;
+  border-color: #555;
+}
+.dark-mode .post-container .tags a:hover,
+.dark-mode .post-container .tags a:active {
+  color: #2ea8c7;
+  border-color: #2ea8c7;
+}
+
+/* ---- sidebar ---- */
+.dark-mode .sidebar-container {
+  color: #888;
+}
+.dark-mode .sidebar-container h5 {
+  color: #999;
+}
+.dark-mode .sidebar-container h5 a {
+  color: #999 !important;
+}
+.dark-mode .sidebar-container a {
+  color: #888 !important;
+}
+.dark-mode .sidebar-container a:hover,
+.dark-mode .sidebar-container a:active {
+  color: #2ea8c7 !important;
+}
+.dark-mode .sidebar-container .tags a {
+  border-color: #555;
+}
+.dark-mode .sidebar-container .tags a:hover,
+.dark-mode .sidebar-container .tags a:active {
+  border-color: #2ea8c7;
+}
+
+/* ---- tag cloud ---- */
+.dark-mode #tag_cloud a,
+.dark-mode #tag_cloud .tag {
+  background: #3a3a3a;
+  color: #ccc;
+}
+.dark-mode #tag_cloud a:hover,
+.dark-mode #tag_cloud .tag:hover,
+.dark-mode #tag_cloud a:active,
+.dark-mode #tag_cloud .tag:active {
+  background-color: #2ea8c7 !important;
+  color: #fff;
+}
+
+/* ---- tag listing (tags page) ---- */
+.dark-mode .one-tag-list .tag-text {
+  color: #e0e0e0;
+}
+
+.dark-mode .one-tag-list .post-preview > a .post-title {
+  color: #e0e0e0;
+}
+.dark-mode .one-tag-list .post-preview > a .post-subtitle {
+  color: #999;
+}
+.dark-mode .one-tag-list .post-preview > a:hover .post-title,
+.dark-mode .one-tag-list .post-preview > a:focus .post-title {
+  color: #2ea8c7;
+}
+
+.dark-mode .one-tag-list .post-preview > .post-meta {
+  color: #888;
+}
+
+.dark-mode .listing-seperator {
+  color: #2ea8c7;
+}
+
+/* ---- pager ---- */
+.dark-mode .pager li > a,
+.dark-mode .pager li > span {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+.dark-mode .pager li > a:hover,
+.dark-mode .pager li > a:focus {
+  color: #fff;
+  background-color: #2ea8c7;
+  border-color: #2ea8c7;
+}
+.dark-mode .pager .disabled > a,
+.dark-mode .pager .disabled > a:hover,
+.dark-mode .pager .disabled > span {
+  color: #666;
+  background-color: #2a2a2a;
+}
+
+/* ---- select elements (language picker etc) ---- */
+.dark-mode select {
+  background: #2a2a2a;
+  color: #ccc;
+  border-color: #555;
+}
+
+/* ---- footer ---- */
+.dark-mode footer {
+  color: #999;
+}
+.dark-mode footer .copyright a {
+  color: #5fa8d3;
+}
+.dark-mode footer .copyright a:hover,
+.dark-mode footer .copyright a:focus {
+  color: #2ea8c7;
+}
+
+.dark-mode footer .fa-stack .fa-circle {
+  color: #444;
+}
+
+/* ---- form elements (contact page) ---- */
+.dark-mode .floating-label-form-group {
+  border-bottom-color: #444;
+}
+.dark-mode .floating-label-form-group input,
+.dark-mode .floating-label-form-group textarea {
+  color: #e0e0e0;
+  background: transparent;
+}
+.dark-mode .floating-label-form-group-with-focus label {
+  color: #2ea8c7;
+}
+.dark-mode form .row:first-child .floating-label-form-group {
+  border-top-color: #444;
+}
+
+.dark-mode .btn-default {
+  color: #ccc;
+  background: #333;
+  border-color: #555;
+}
+.dark-mode .btn-default:hover,
+.dark-mode .btn-default:focus {
+  background-color: #2ea8c7;
+  border-color: #2ea8c7;
+  color: #fff;
+}
+
+/* ---- comments (Disqus / Duoshuo) ---- */
+.dark-mode .comment #ds-thread #ds-reset a.ds-like-thread-button {
+  border-color: #444;
+  background: #2a2a2a;
+  color: #ccc;
+}
+.dark-mode .comment #ds-thread #ds-reset li.ds-tab a.ds-current {
+  border-color: #444;
+  background: #2a2a2a;
+  color: #ccc;
+}
+.dark-mode #ds-smilies-tooltip ul.ds-smilies-tabs li a {
+  background: #2a2a2a !important;
+}
+
+/* ---- misc ---- */
+.dark-mode .section-heading {
+  color: #e6e6e6;
+}
+
+.dark-mode img.shadow {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px 0;
+}
+
+/* dark mode toggle icon in nav */
+.dark-mode #darkModeToggle i {
+  color: #ffd700;
+}
+
+/* page-fullscreen dark mode */
+.dark-mode .page-fullscreen footer {
+  color: rgba(255, 255, 255, 0.6);
+}
+.dark-mode .page-fullscreen footer .copyright,
+.dark-mode .page-fullscreen footer .copyright a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.dark-mode .page-fullscreen footer .copyright a:hover {
+  color: #fff;
+}
