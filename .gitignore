@@ -1,2 +1,6 @@
 node_modules
 .deploy_git
+public
+db.json
+debug.log
+generate-static.js
