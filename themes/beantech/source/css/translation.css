@@ -1,0 +1,435 @@
+/* Custom styles for browser-native translation feature */
+
+:root {
+  --tr-bg: rgba(255, 255, 255, 0.95);
+  --tr-border: rgba(0, 133, 161, 0.12); /* Tinted with signature cyan border */
+  --tr-text: #222222;
+  --tr-text-secondary: #555555;
+  --tr-accent: #0085a1; /* BeanTech signature color */
+  --tr-accent-hover: #00657b;
+  --tr-shadow: 0 10px 30px rgba(0, 85, 100, 0.12); /* Soft premium shadow */
+  --tr-banner-bg: rgba(255, 255, 255, 0.9);
+  --tr-progress-bg: rgba(0, 133, 161, 0.1);
+  --tr-overlay-bg: rgba(0, 0, 0, 0.4);
+  --tr-card-bg: #ffffff;
+}
+
+.dark-mode {
+  --tr-bg: rgba(30, 34, 42, 0.95);
+  --tr-border: rgba(48, 176, 204, 0.15); /* Tinted dark accent border */
+  --tr-text: #f0f2f5;
+  --tr-text-secondary: #a6adbb;
+  --tr-accent: #30b0cc;
+  --tr-accent-hover: #48c0db;
+  --tr-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  --tr-banner-bg: rgba(26, 30, 38, 0.9);
+  --tr-progress-bg: rgba(48, 176, 204, 0.15);
+  --tr-overlay-bg: rgba(0, 0, 0, 0.6);
+  --tr-card-bg: #1e222b;
+}
+
+/* Translation toggle and menu styling */
+.nav > li.translation-toggle {
+  position: relative;
+}
+
+.translation-toggle #translationToggle {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+  font-size: 16px;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove active-state highlight that pops against header image */
+.translation-toggle #translationToggle:active,
+.translation-toggle #translationToggle:focus {
+  background: transparent !important;
+  outline: none;
+}
+
+.translation-toggle:hover #translationToggle {
+  transform: rotate(25deg);
+  color: var(--tr-accent) !important;
+}
+
+/* Match dark mode toggle alignment with translation toggle */
+.theme-toggle #darkModeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  font-size: 16px;
+}
+
+/* -- Homepage title & subtitle -- */
+/* Left-align title and subtitle on the main page */
+.intro-header .site-heading {
+  text-align: left !important;
+}
+.intro-header .site-heading h1 {
+  font-size: 36px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.intro-header .site-heading .subheading {
+  font-size: 16px !important;
+}
+@media only screen and (min-width: 768px) {
+  .intro-header .site-heading h1 {
+    font-size: 52px !important;
+  }
+  .intro-header .site-heading .subheading {
+    font-size: 20px !important;
+  }
+}
+
+/* Override Bootstrap dropdown defaults for translation menu */
+.translation-menu.dropdown-menu {
+  min-width: 190px;
+  border-radius: 12px;
+  padding: 10px 0;
+  margin-top: 8px !important;
+  transform-origin: top right;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Light mode defaults */
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+  color: #333333 !important;
+}
+
+/* Dark mode: dark glassmorphism dropdown */
+.dark-mode .translation-menu.dropdown-menu {
+  background-color: rgba(26, 30, 38, 0.96) !important;
+  border-color: rgba(48, 176, 204, 0.18) !important;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.45) !important;
+  color: #f0f2f5 !important;
+}
+
+.translation-menu .dropdown-header {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 8px 20px 6px 20px;
+  opacity: 0.8;
+  color: #888888 !important;
+}
+
+.dark-mode .translation-menu .dropdown-header {
+  color: #a6adbb !important;
+}
+
+/* Critical: override navbar white text for dropdown links */
+.nav .translation-menu li > a,
+.translation-menu li > a {
+  display: block !important;
+  padding: 9px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+  color: #333333 !important;
+  white-space: nowrap !important;
+}
+.nav .translation-menu li > a:hover,
+.translation-menu li > a:hover {
+  background-color: rgba(0, 133, 161, 0.08) !important;
+  color: #0085a1 !important;
+}
+
+.dark-mode .nav .translation-menu li > a,
+.dark-mode .translation-menu li > a {
+  color: #e0e0e0 !important;
+}
+.dark-mode .nav .translation-menu li > a:hover,
+.dark-mode .translation-menu li > a:hover {
+  background-color: rgba(48, 176, 204, 0.12) !important;
+  color: #30b0cc !important;
+}
+
+.translation-menu li > a.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: #aaaaaa !important;
+}
+
+.dark-mode .translation-menu li > a.disabled {
+  color: #777777 !important;
+}
+
+.translation-menu li > a.disabled:hover {
+  background-color: transparent !important;
+}
+
+.translation-menu .divider {
+  margin: 8px 0;
+  background-color: #e0e0e0 !important;
+}
+
+.dark-mode .translation-menu .divider {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Translation Status Banner (Glassmorphism) */
+.translation-status-banner {
+  margin: 15px 0 25px 0;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background-color: var(--tr-banner-bg);
+  border: 1px solid var(--tr-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.translation-status-banner.hidden {
+  display: none !important;
+}
+
+.translation-status-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.translation-status-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.translation-status-info i {
+  color: var(--tr-accent);
+  font-size: 16px;
+}
+
+.translation-status-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tr-text);
+}
+
+.translation-status-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-translation-action {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background-color: transparent;
+}
+
+.btn-translation-action.secondary {
+  color: var(--tr-accent);
+  border: 1px solid var(--tr-accent);
+}
+
+.btn-translation-action.secondary:hover {
+  background-color: var(--tr-accent);
+  color: #ffffff;
+}
+
+.btn-translation-action.close-banner {
+  color: var(--tr-text-secondary);
+  font-size: 14px;
+  padding: 4px 6px;
+}
+
+.btn-translation-action.close-banner:hover {
+  color: var(--tr-text);
+}
+
+/* Slim loading bar inside the status banner */
+.translation-progress-bar {
+  height: 4px;
+  background-color: var(--tr-progress-bg);
+  border-radius: 2px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.translation-progress-inner {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tr-accent), var(--tr-accent-hover));
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.translation-progress-bar.animated .translation-progress-inner {
+  animation: shine 1.5s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Beautiful modal for onboarding instruction / unsupported fallback */
+.translation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--tr-overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; /* over navbar */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.translation-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.translation-modal-card {
+  width: 90%;
+  max-width: 500px;
+  background-color: var(--tr-card-bg);
+  border: 1px solid var(--tr-border);
+  border-radius: 16px;
+  box-shadow: var(--tr-shadow);
+  padding: 24px 30px;
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--tr-text);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.translation-modal-overlay.active .translation-modal-card {
+  transform: translateY(0);
+}
+
+.translation-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.translation-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tr-text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.translation-modal-title i {
+  color: var(--tr-accent);
+}
+
+.btn-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--tr-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.btn-modal-close:hover {
+  color: var(--tr-text);
+}
+
+.translation-modal-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--tr-text-secondary);
+  margin-bottom: 24px;
+}
+
+.translation-modal-body p {
+  margin: 0 0 12px 0;
+}
+
+.translation-step-list {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.translation-step-list li {
+  margin-bottom: 10px;
+  color: var(--tr-text);
+}
+
+.translation-flag-code {
+  font-family: Monaco, Consolas, Courier New, monospace;
+  background-color: var(--tr-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--tr-accent);
+  word-break: break-all;
+}
+
+.translation-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-modal-primary {
+  background-color: var(--tr-accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-modal-primary:hover {
+  background-color: var(--tr-accent-hover);
+}
+
+/* Micro-animations and highlights */
+.translation-highlight {
+  position: relative;
+  display: inline;
+}
+
+.translation-highlight-loading {
+  background: linear-gradient(90deg, transparent, var(--tr-border), transparent);
+  background-size: 200% 100%;
+  animation: shine 1.5s infinite linear;
+  border-radius: 3px;
+}

@@ -14,6 +14,15 @@
     }
   }catch(e){}
 
+  // Prevent browser scroll restoration and embedded content from stealing focus/scroll
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+  // Ensure page always loads at top
+  window.addEventListener('load', function() {
+    window.scrollTo(0, 0);
+  });
+
   document.addEventListener('DOMContentLoaded', function(){
     var btn = document.getElementById('darkModeToggle');
     function setIcon(isDark){

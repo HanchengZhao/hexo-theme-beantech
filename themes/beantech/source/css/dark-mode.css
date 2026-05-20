@@ -323,6 +323,32 @@
   color: #ffd700;
 }
 
+/* translation dropdown — dark mode */
+.dark-mode .translation-menu.dropdown-menu {
+  background-color: rgba(26, 30, 38, 0.96) !important;
+  border-color: rgba(48, 176, 204, 0.18) !important;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.45) !important;
+  color: #f0f2f5 !important;
+}
+.dark-mode .translation-menu .dropdown-header {
+  color: #a6adbb !important;
+}
+.dark-mode .nav .translation-menu li > a,
+.dark-mode .translation-menu li > a {
+  color: #e0e0e0 !important;
+}
+.dark-mode .nav .translation-menu li > a:hover,
+.dark-mode .translation-menu li > a:hover {
+  background-color: rgba(48, 176, 204, 0.12) !important;
+  color: #30b0cc !important;
+}
+.dark-mode .translation-menu li > a.disabled {
+  color: #777777 !important;
+}
+.dark-mode .translation-menu .divider {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 /* page-fullscreen dark mode */
 .dark-mode .page-fullscreen footer {
   color: rgba(255, 255, 255, 0.6);
