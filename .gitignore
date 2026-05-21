@@ -3,4 +3,3 @@ node_modules
 public
 db.json
 debug.log
-generate-static.js
